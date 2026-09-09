@@ -1,4 +1,4 @@
-# Orquestador seguro — campaña 6 GHz de Luisita Adalid
+# Orquestador seguro — experimento de radioenlace andino en 6 GHz
 
 Controla exclusivamente el AP Force 4600C de CU01. El SM conserva sus listas de exploración 6475/6655/7000 MHz para 20/40 MHz y se reasocia automáticamente.
 
@@ -15,10 +15,19 @@ Controla exclusivamente el AP Force 4600C de CU01. El SM conserva sus listas de 
 
 `centerFrequency2` nunca se modifica. No se guardan contraseñas ni tokens.
 
+## Diseño temporal
+
+La línea base comprende 14 días completos en 7000 MHz/20 MHz, equivalentes a dos ciclos semanales. Este periodo permite comprobar la estabilidad operativa, cubrir la variación diurna y semanal y caracterizar las condiciones meteorológicas previas sin prolongar innecesariamente la campaña.
+
+El 15 de septiembre se reserva para el piloto supervisado y la transición; sus observaciones se etiquetarán como `PILOT` y no se incorporarán a la comparación factorial. La campaña formal comienza el 16 de septiembre de 2026 y finaliza el 28 de octubre de 2026.
+
+El acceso al AP utiliza HTTPS. La opción `tls_verify=false` se limita al certificado autofirmado del equipo dentro de la red local de gestión.
+
+
 ## Validación sin tocar el radio
 
 ```bash
-cd ~/Proyectos/EstacionMeteorologica/luisita_campaign
+cd ~/Proyectos/Andean-6GHz-Link-Experiment
 python3 -m unittest -v test_campaign_orchestrator
 python3 campaign_orchestrator.py validate --config campaign_plan.template.json
 python3 campaign_orchestrator.py plan --config campaign_plan.template.json

@@ -1,9 +1,58 @@
 {
-  "campaign_id":"LUISITA_6G_3X2_2026","timezone":"America/Lima",
-  "baseline":{"start_local":"2026-08-31T16:00:00-05:00","analysis_start_local":"2026-09-01T00:00:00-05:00","days":21,"frequency_mhz":7000,"bandwidth_mhz":20},
-  "experiment":{"days_per_treatment":7,"block_lengths_days":[3,2,2],"frequency_levels_mhz":[6475,6655,7000],"bandwidth_levels_mhz":[20,40],"order_seed":20260908,"start_local":null},
-  "network":{"ap_name":"CU01","ap_ip":"192.168.1.8","sm_name":"SJ01","sm_ip":"192.168.1.9","rpi_name":"RaspberryPi-SJ01","rpi_ip":"192.168.1.4"},
-  "api":{"scheme":"http","auth_mode":"stok_env","stok_env":"CAMBIUM_AP_STOK","request_timeout_seconds":15},
-  "safety":{"trial_timeout_seconds":300,"association_timeout_seconds":180,"confirmation_margin_seconds":60,"probe_interval_seconds":2,"minimum_successful_probes":10},
-  "outputs":{"directory":"campaign_runtime","event_log":"campaign_events.jsonl","state":"campaign_state.json","schedule":"campaign_schedule.csv"}
+  "campaign_id": "ANDEAN_6GHZ_3X2_2026",
+  "timezone": "America/Lima",
+  "baseline": {
+    "start_local": "2026-08-31T16:00:00-05:00",
+    "analysis_start_local": "2026-09-01T00:00:00-05:00",
+    "days": 14,
+    "frequency_mhz": 7000,
+    "bandwidth_mhz": 20
+  },
+  "experiment": {
+    "days_per_treatment": 7,
+    "block_lengths_days": [
+      3,
+      2,
+      2
+    ],
+    "frequency_levels_mhz": [
+      6475,
+      6655,
+      7000
+    ],
+    "bandwidth_levels_mhz": [
+      20,
+      40
+    ],
+    "order_seed": 20260908,
+    "start_local": "2026-09-16T00:00:00-05:00"
+  },
+  "network": {
+    "ap_name": "CU01",
+    "ap_ip": "192.168.1.8",
+    "sm_name": "SJ01",
+    "sm_ip": "192.168.1.9",
+    "rpi_name": "RaspberryPi-SJ01",
+    "rpi_ip": "192.168.1.4"
+  },
+  "api": {
+    "scheme": "https",
+    "auth_mode": "stok_env",
+    "stok_env": "CAMBIUM_AP_STOK",
+    "request_timeout_seconds": 15,
+    "tls_verify": false
+  },
+  "safety": {
+    "trial_timeout_seconds": 300,
+    "association_timeout_seconds": 180,
+    "confirmation_margin_seconds": 60,
+    "probe_interval_seconds": 2,
+    "minimum_successful_probes": 10
+  },
+  "outputs": {
+    "directory": "campaign_runtime",
+    "event_log": "campaign_events.jsonl",
+    "state": "campaign_state.json",
+    "schedule": "campaign_schedule.csv"
+  }
 }

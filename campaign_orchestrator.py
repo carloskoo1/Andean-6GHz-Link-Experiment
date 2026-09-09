@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Orquestador AP-only seguro para la campaña 6 GHz de Luisita Adalid."""
+"""Orquestador seguro para una campaña experimental de radioenlace andino en 6 GHz."""
 from __future__ import annotations
 import argparse, csv, itertools, json, os, random, subprocess, sys, time
+import ssl
 import urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -26,7 +27,7 @@ def validate_config(c, complete=False):
     if complete and any(v is None for v in [*f,*b]): e.append("Hay niveles null.")
     if x.get("days_per_treatment")!=7 or x.get("block_lengths_days")!=[3,2,2]: e.append("Diseño temporal requerido: siete días en bloques 3+2+2.")
     q=c.get("baseline",{})
-    if q.get("days")!=21: e.append("La línea base debe durar 21 días.")
+    if q.get("days")!=14: e.append("La línea base debe durar 14 días.")
     try: parse_iso(q.get("start_local"),"baseline.start_local"); parse_iso(q.get("analysis_start_local"),"baseline.analysis_start_local")
     except CampaignError as z: e.append(str(z))
     s=c.get("safety",{}); trial=int(s.get("trial_timeout_seconds",0)); assoc=int(s.get("association_timeout_seconds",0)); margin=int(s.get("confirmation_margin_seconds",0))
@@ -46,7 +47,30 @@ def scenario(c,sid):
         if s["scenario_id"]==sid:return s
     raise CampaignError(f"Escenario desconocido: {sid}")
 def schedule(c):
-    b=c["baseline"]; start=parse_iso(b["analysis_start_local"],"analysis_start"); rows=[{**baseline(c),"sequence":0,"start_local":start.isoformat(),"end_local":(start+timedelta(days=21)).isoformat(),"deployment_start_local":b["start_local"]}]; cursor=start+timedelta(days=21); seq=1
+    b = c["baseline"]
+    start = parse_iso(
+        b["analysis_start_local"],
+        "analysis_start",
+    )
+    baseline_end = start + timedelta(days=b["days"])
+    rows = [{
+        **baseline(c),
+        "sequence": 0,
+        "start_local": start.isoformat(),
+        "end_local": baseline_end.isoformat(),
+        "deployment_start_local": b["start_local"],
+    }]
+    configured_start = c["experiment"].get("start_local")
+    cursor = (
+        parse_iso(configured_start, "experiment.start_local")
+        if configured_start
+        else baseline_end
+    )
+    if cursor < baseline_end:
+        raise CampaignError(
+            "El experimento no puede comenzar antes de finalizar la línea base."
+        )
+    seq = 1
     for block,days in enumerate(c["experiment"]["block_lengths_days"],1):
         a=[dict(v) for v in scenarios(c)]; random.Random(c["experiment"]["order_seed"]+block).shuffle(a)
         for s in a:
@@ -58,8 +82,16 @@ class CambiumAPI:
     def post(self,endpoint,form):
         a=self.c["api"]; ip=self.c["network"]["ap_ip"]; token=urllib.parse.quote(self.stok,safe=""); url=f"{a.get('scheme','http')}://{ip}/cgi-bin/luci/;stok={token}/admin/{endpoint}"
         req=urllib.request.Request(url,data=urllib.parse.urlencode(form).encode(),method="POST",headers={"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"})
+        tls_context = None
+        if url.startswith("https://") and not a.get(
+            "tls_verify",
+            True,
+        ):
+            tls_context = ssl.create_default_context()
+            tls_context.check_hostname = False
+            tls_context.verify_mode = ssl.CERT_NONE
         try:
-            with urllib.request.urlopen(req,timeout=a["request_timeout_seconds"]) as r: p=json.loads(r.read().decode())
+            with urllib.request.urlopen(req,timeout=a["request_timeout_seconds"],context=tls_context) as r: p=json.loads(r.read().decode())
         except Exception as z: raise CampaignError(f"Fallo API {endpoint}: {z}") from z
         if str(p.get("success")).lower() not in {"1","true"} or p.get("err"): raise CampaignError(f"API rechazó {endpoint}: {p}")
         return p

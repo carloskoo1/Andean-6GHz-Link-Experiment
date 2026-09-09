@@ -108,7 +108,15 @@ class Tests(unittest.TestCase):
         rows = schedule(self.cfg)
 
         self.assertEqual(19, len(rows))
-        self.assertEqual(63, sum(item["days"] for item in rows))
+        self.assertEqual(56, sum(item["days"] for item in rows))
+        self.assertEqual(
+            "2026-09-15T00:00:00-05:00",
+            rows[0]["end_local"],
+        )
+        self.assertEqual(
+            "2026-09-16T00:00:00-05:00",
+            rows[1]["start_local"],
+        )
 
         totals = {}
         for item in rows[1:]:
