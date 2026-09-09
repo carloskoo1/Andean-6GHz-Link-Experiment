@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+*.before_*
+campaign_runtime/campaign_events.jsonl
+campaign_runtime/campaign_state.json
