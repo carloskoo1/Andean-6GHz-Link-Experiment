@@ -294,24 +294,159 @@ class Orchestrator:
         )
         tmp.replace(self.state)
 
+    def pilot(self, target, dwell_seconds):
+        if (
+            int(target["frequency_mhz"]) != 7000
+            or int(target["bandwidth_mhz"]) != 40
+        ):
+            raise CampaignError(
+                "El piloto validado solo admite el escenario F7000_B40."
+            )
+
+        baseline_scenario = {
+            "scenario_id": "PILOT_BASELINE",
+            "frequency_mhz": self.c["baseline"]["frequency_mhz"],
+            "bandwidth_mhz": self.c["baseline"]["bandwidth_mhz"],
+            "days": 0,
+            "phase": "PILOT",
+        }
+        pilot_scenario = {
+            **target,
+            "scenario_id": f"PILOT_{target['scenario_id']}",
+            "days": 0,
+            "phase": "PILOT",
+        }
+        return_scenario = {
+            **baseline_scenario,
+            "scenario_id": "PILOT_RETURN_BASELINE",
+        }
+
+        self.event(
+            "PILOT_START",
+            pilot_scenario,
+            "STARTED",
+            f"dwell_seconds={dwell_seconds}",
+        )
+
+        if self.dry:
+            self.event(
+                "PILOT_TARGET_SIMULATED",
+                pilot_scenario,
+                "DRY_RUN",
+            )
+            self.event(
+                "PILOT_RETURN_SIMULATED",
+                return_scenario,
+                "DRY_RUN",
+            )
+            self.event(
+                "PILOT_COMPLETED",
+                return_scenario,
+                "DRY_RUN",
+            )
+            return
+
+        self.verify(baseline_scenario)
+        self.switch(pilot_scenario)
+        self.event(
+            "PILOT_DWELL_START",
+            pilot_scenario,
+            "OK",
+            f"dwell_seconds={dwell_seconds}",
+        )
+
+        try:
+            time.sleep(dwell_seconds)
+        finally:
+            self.event(
+                "PILOT_RETURN_START",
+                return_scenario,
+                "STARTED",
+            )
+            self.switch(return_scenario)
+
+        self.verify(baseline_scenario)
+        if not self.probes():
+            raise CampaignError(
+                "El piloto retornó a la configuración base, "
+                "pero falló la conectividad final."
+            )
+
+        self.event(
+            "PILOT_COMPLETED",
+            return_scenario,
+            "OK",
+        )
+
     def plan(self):
         rows=schedule(self.c); fields=["sequence","scenario_id","phase","block","frequency_mhz","bandwidth_mhz","start_local","end_local","days","deployment_start_local"]
         with self.csv.open("w",newline="",encoding="utf-8") as f:w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore",lineterminator="\n");w.writeheader();w.writerows(rows)
         print(self.csv)
 
 def main():
-    p=argparse.ArgumentParser(); sub=p.add_subparsers(dest="action",required=True)
-    for a in ("validate","plan"):q=sub.add_parser(a);q.add_argument("--config",required=True,type=Path)
-    q=sub.add_parser("switch");q.add_argument("--config",required=True,type=Path);q.add_argument("--scenario",required=True);q.add_argument("--dry-run",action="store_true"); a=p.parse_args()
+    parser = argparse.ArgumentParser()
+    sub = parser.add_subparsers(dest="action", required=True)
+
+    for action in ("validate", "plan"):
+        command = sub.add_parser(action)
+        command.add_argument("--config", required=True, type=Path)
+
+    switch_command = sub.add_parser("switch")
+    switch_command.add_argument("--config", required=True, type=Path)
+    switch_command.add_argument("--scenario", required=True)
+    switch_command.add_argument("--dry-run", action="store_true")
+
+    pilot_command = sub.add_parser("pilot")
+    pilot_command.add_argument("--config", required=True, type=Path)
+    pilot_command.add_argument("--scenario", default="F7000_B40")
+    pilot_command.add_argument("--dwell-seconds", type=int, default=600)
+    pilot_command.add_argument("--dry-run", action="store_true")
+
+    args = parser.parse_args()
     try:
-        c=load_config(a.config); errs=validate_config(c,a.action!="validate")
-        if errs:raise CampaignError(" | ".join(errs))
-        if a.action=="validate":print("Configuración válida: AP-only, trial/confirm y factorial 3x2.");return 0
-        if a.action=="plan": Orchestrator(c,a.config,CambiumAPI(c,"DRY"),True).plan(); return 0
-        dry=getattr(a,"dry_run",False); token="DRY" if dry else os.environ.get(c["api"]["stok_env"],"").strip()
-        if not token:raise CampaignError(f"Falta {c['api']['stok_env']}.")
-        o=Orchestrator(c,a.config,CambiumAPI(c,token),dry)
-        o.switch(scenario(c,a.scenario))
+        config = load_config(args.config)
+        errors = validate_config(config, args.action != "validate")
+        if errors:
+            raise CampaignError(" | ".join(errors))
+        if args.action == "validate":
+            print("Configuración válida: AP-only, trial/confirm y factorial 3x2.")
+            return 0
+        if args.action == "plan":
+            Orchestrator(
+                config,
+                args.config,
+                CambiumAPI(config, "DRY"),
+                True,
+            ).plan()
+            return 0
+
+        dry = getattr(args, "dry_run", False)
+        token = (
+            "DRY"
+            if dry
+            else os.environ.get(config["api"]["stok_env"], "").strip()
+        )
+        if not token:
+            raise CampaignError(f"Falta {config['api']['stok_env']}.")
+
+        orchestrator = Orchestrator(
+            config,
+            args.config,
+            CambiumAPI(config, token),
+            dry,
+        )
+        selected = scenario(config, args.scenario)
+
+        if args.action == "pilot":
+            if not 60 <= args.dwell_seconds <= 1800:
+                raise CampaignError(
+                    "El piloto debe durar entre 60 y 1800 segundos."
+                )
+            orchestrator.pilot(selected, args.dwell_seconds)
+        else:
+            orchestrator.switch(selected)
         return 0
-    except Exception as e:print(f"ERROR: {e}",file=sys.stderr);return 2
+    except Exception as error:
+        print(f"ERROR: {error}", file=sys.stderr)
+        return 2
 if __name__=="__main__":raise SystemExit(main())

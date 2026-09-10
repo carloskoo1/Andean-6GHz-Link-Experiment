@@ -222,6 +222,91 @@ class Tests(unittest.TestCase):
                 api.props,
             )
 
+    @patch("campaign_orchestrator.time.sleep", lambda _: None)
+    def test_pilot_changes_and_returns_to_baseline(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            config["outputs"]["directory"] = directory
+            api = FakeAPI()
+            orchestrator = ControlledOrchestrator(
+                config,
+                HERE / "x",
+                api,
+            )
+
+            orchestrator.pilot(self.make_scenario(), 600)
+
+            trials = [
+                call
+                for call in api.calls
+                if isinstance(call, tuple)
+                and call[0] == "trial"
+            ]
+            self.assertEqual(
+                [
+                    ("trial", 7000, 40),
+                    ("trial", 7000, 20),
+                ],
+                trials,
+            )
+            self.assertEqual(
+                2,
+                api.calls.count(("finish", True)),
+            )
+            self.assertEqual(
+                {
+                    "centerFrequency": "7000",
+                    "wirelessInterfaceHTMode": "1",
+                },
+                api.props,
+            )
+
+    def test_pilot_rejects_unexpected_initial_state(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            config["outputs"]["directory"] = directory
+            api = FakeAPI()
+            api.props["centerFrequency"] = "6655"
+            orchestrator = ControlledOrchestrator(
+                config,
+                HERE / "x",
+                api,
+            )
+
+            with self.assertRaises(Exception):
+                orchestrator.pilot(self.make_scenario(), 600)
+
+            self.assertFalse(
+                any(
+                    isinstance(call, tuple)
+                    and call[0] == "trial"
+                    for call in api.calls
+                )
+            )
+
+    def test_pilot_rejects_unvalidated_target(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            config["outputs"]["directory"] = directory
+            api = FakeAPI()
+            orchestrator = ControlledOrchestrator(
+                config,
+                HERE / "x",
+                api,
+            )
+            invalid_target = {
+                **self.make_scenario(),
+                "frequency_mhz": 6655,
+            }
+
+            with self.assertRaises(Exception):
+                orchestrator.pilot(invalid_target, 600)
+
+            self.assertEqual([], api.calls)
+
 
 if __name__ == "__main__":
     unittest.main()
