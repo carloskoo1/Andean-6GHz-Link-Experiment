@@ -1,0 +1,11 @@
+[Unit]
+Description=Check Andean 6 GHz campaign schedule every minute
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Persistent=true
+AccuracySec=1s
+Unit=andean-campaign.service
+
+[Install]
+WantedBy=timers.target

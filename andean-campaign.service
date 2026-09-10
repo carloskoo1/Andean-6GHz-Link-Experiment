@@ -1,0 +1,14 @@
+[Unit]
+Description=Andean 6 GHz campaign transition executor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=carlos
+WorkingDirectory=/home/carlos/Proyectos/Andean-6GHz-Link-Experiment
+ExecStart=/usr/bin/python3 /home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_executor.py --config /home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_plan.template.json
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

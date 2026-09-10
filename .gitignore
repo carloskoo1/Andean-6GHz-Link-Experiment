@@ -3,3 +3,5 @@ __pycache__/
 *.before_*
 campaign_runtime/campaign_events.jsonl
 campaign_runtime/campaign_state.json
+campaign_runtime/executor.lock
+campaign_runtime/executor_failure.json
