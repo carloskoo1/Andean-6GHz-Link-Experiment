@@ -2,6 +2,7 @@
 """Orquestador seguro para una campaña experimental de radioenlace andino en 6 GHz."""
 from __future__ import annotations
 import argparse, csv, itertools, json, os, random, subprocess, sys, time
+import http.cookiejar
 import ssl
 import urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -34,7 +35,9 @@ def validate_config(c, complete=False):
     if trial!=300: e.append("La prueba temporal validada dura 300 s.")
     if assoc<120 or assoc+margin>=trial: e.append("Ventana de reasociación/margen inválida.")
     if int(s.get("minimum_successful_probes",0))<5: e.append("Se requieren al menos cinco sondeos consecutivos.")
-    if c.get("api",{}).get("auth_mode")!="stok_env": e.append("auth_mode debe ser stok_env.")
+    auth_mode=c.get("api",{}).get("auth_mode")
+    if auth_mode not in {"credentials_file","stok_env"}: e.append("auth_mode debe ser credentials_file o stok_env.")
+    if auth_mode=="credentials_file" and not c.get("api",{}).get("credentials_file"): e.append("Falta api.credentials_file.")
     return e
 
 def scenarios(c):
@@ -78,21 +81,53 @@ def schedule(c):
     return rows
 
 class CambiumAPI:
-    def __init__(self,c,stok): self.c,self.stok,self.config_id=c,stok,None
-    def post(self,endpoint,form):
-        a=self.c["api"]; ip=self.c["network"]["ap_ip"]; token=urllib.parse.quote(self.stok,safe=""); url=f"{a.get('scheme','http')}://{ip}/cgi-bin/luci/;stok={token}/admin/{endpoint}"
+    def __init__(self,c,stok="",opener=None):
+        self.c,self.stok,self.config_id=c,stok,None
+        a=c["api"]
+        tls_context=None
+        if a.get("scheme","http")=="https" and not a.get("tls_verify",True):
+            tls_context=ssl.create_default_context()
+            tls_context.check_hostname=False
+            tls_context.verify_mode=ssl.CERT_NONE
+        if opener is None:
+            handlers=[urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())]
+            if tls_context is not None:
+                handlers.append(urllib.request.HTTPSHandler(context=tls_context))
+            opener=urllib.request.build_opener(*handlers)
+        self.opener=opener
+    def request(self,url,form):
         req=urllib.request.Request(url,data=urllib.parse.urlencode(form).encode(),method="POST",headers={"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"})
-        tls_context = None
-        if url.startswith("https://") and not a.get(
-            "tls_verify",
-            True,
-        ):
-            tls_context = ssl.create_default_context()
-            tls_context.check_hostname = False
-            tls_context.verify_mode = ssl.CERT_NONE
         try:
-            with urllib.request.urlopen(req,timeout=a["request_timeout_seconds"],context=tls_context) as r: p=json.loads(r.read().decode())
-        except Exception as z: raise CampaignError(f"Fallo API {endpoint}: {z}") from z
+            with self.opener.open(req,timeout=self.c["api"]["request_timeout_seconds"]) as r: return json.loads(r.read().decode())
+        except Exception as z: raise CampaignError(f"Fallo de comunicación con la API: {z}") from z
+    def authenticate(self,credentials_path):
+        path=Path(credentials_path).expanduser()
+        try:
+            if path.stat().st_mode & 0o077:
+                raise CampaignError("El archivo de credenciales debe tener permisos 600.")
+            credentials=json.loads(path.read_text(encoding="utf-8"))
+        except CampaignError:
+            raise
+        except Exception as z:
+            raise CampaignError(f"No se pudieron leer las credenciales protegidas: {z}") from z
+        username=str(credentials.get("username","")).strip()
+        password=str(credentials.get("password",""))
+        if not username or not password:
+            raise CampaignError("El archivo de credenciales está incompleto.")
+        a=self.c["api"]; ip=self.c["network"]["ap_ip"]
+        payload=self.request(f"{a.get('scheme','http')}://{ip}/cgi-bin/luci",{"username":username,"password":password})
+        self.stok=str(payload.get("stok","")).strip()
+        if len(self.stok)!=32:
+            raise CampaignError(f"Autenticación rechazada por el AP: {payload.get('msg','respuesta sin STOK')}")
+        check=self.post("test_connect",{})
+        if str(check.get("test"))!="1":
+            self.stok=""
+            raise CampaignError("El AP creó una sesión que no superó test_connect.")
+        return True
+    def post(self,endpoint,form):
+        if not self.stok: raise CampaignError("No existe una sesión autenticada con el AP.")
+        a=self.c["api"]; ip=self.c["network"]["ap_ip"]; token=urllib.parse.quote(self.stok,safe=""); url=f"{a.get('scheme','http')}://{ip}/cgi-bin/luci/;stok={token}/admin/{endpoint}"
+        p=self.request(url,form)
         if str(p.get("success")).lower() not in {"1","true"} or p.get("err"): raise CampaignError(f"API rechazó {endpoint}: {p}")
         return p
     def read(self):
@@ -387,7 +422,7 @@ def main():
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="action", required=True)
 
-    for action in ("validate", "plan"):
+    for action in ("validate", "plan", "preflight"):
         command = sub.add_parser(action)
         command.add_argument("--config", required=True, type=Path)
 
@@ -421,20 +456,41 @@ def main():
             return 0
 
         dry = getattr(args, "dry_run", False)
-        token = (
-            "DRY"
-            if dry
-            else os.environ.get(config["api"]["stok_env"], "").strip()
-        )
-        if not token:
-            raise CampaignError(f"Falta {config['api']['stok_env']}.")
+        api = CambiumAPI(config, "DRY" if dry else "")
+        if not dry:
+            auth_mode=config["api"]["auth_mode"]
+            if auth_mode=="credentials_file":
+                api.authenticate(config["api"]["credentials_file"])
+            else:
+                api.stok=os.environ.get(config["api"]["stok_env"],"").strip()
+                if not api.stok:
+                    raise CampaignError(f"Falta {config['api']['stok_env']}.")
 
         orchestrator = Orchestrator(
             config,
             args.config,
-            CambiumAPI(config, token),
+            api,
             dry,
         )
+
+        if args.action == "preflight":
+            properties = api.read()
+            if not orchestrator.probes():
+                raise CampaignError(
+                    "Preflight falló: AP, SM y RPi deben responder."
+                )
+            frequency = properties.get("centerFrequency", "desconocida")
+            bandwidth = properties.get(
+                "wirelessInterfaceHTMode",
+                "desconocido",
+            )
+            print("Autenticación automática: OK")
+            print("Cookie y test_connect: OK")
+            print("Conectividad AP/SM/RPi: OK")
+            print(f"centerFrequency actual: {frequency}")
+            print(f"wirelessInterfaceHTMode actual: {bandwidth}")
+            return 0
+
         selected = scenario(config, args.scenario)
 
         if args.action == "pilot":

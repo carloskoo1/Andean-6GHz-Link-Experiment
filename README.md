@@ -48,3 +48,18 @@ unset CAMBIUM_AP_STOK
 No realice cambios sin supervisión hasta validar el inicio de sesión automático. Los eventos quedan en `campaign_runtime/campaign_events.jsonl`, el estado confirmado en `campaign_state.json` y el calendario en `campaign_schedule.csv`.
 
 Escenarios: `F6475_B20`, `F6475_B40`, `F6655_B20`, `F6655_B40`, `F7000_B20` y `F7000_B40`. Cada tratamiento totaliza siete días en bloques de 3, 2 y 2 días.
+
+
+## Autenticación automática protegida
+
+El orquestador inicia una sesión administrativa antes de cada operación, conserva conjuntamente la cookie de sesión y el `stok`, y valida ambos mediante `test_connect`.
+
+Las credenciales se almacenan exclusivamente en `~/.config/andean-6ghz-link/ap_credentials.json`. Este archivo debe pertenecer al usuario de ejecución, conservar permisos `600` y permanecer fuera del repositorio.
+
+La comprobación real de solo lectura se ejecuta mediante:
+
+```bash
+python3 campaign_orchestrator.py preflight --config campaign_plan.template.json
+```
+
+Este comando autentica, consulta la configuración actual y comprueba la conectividad con el AP, el SM y la Raspberry Pi. No modifica la frecuencia, el ancho de canal ni otros parámetros del radio.

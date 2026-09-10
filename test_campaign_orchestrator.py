@@ -5,6 +5,8 @@ from pathlib import Path
 from unittest.mock import patch
 
 from campaign_orchestrator import (
+    CambiumAPI,
+    CampaignError,
     Orchestrator,
     bw_code,
     load_config,
@@ -14,6 +16,31 @@ from campaign_orchestrator import (
 )
 
 HERE = Path(__file__).parent
+
+
+class FakeResponse:
+    def __init__(self, payload):
+        self.payload = payload
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+    def read(self):
+        import json
+        return json.dumps(self.payload).encode()
+
+
+class FakeOpener:
+    def __init__(self, responses):
+        self.responses = list(responses)
+        self.requests = []
+
+    def open(self, request, timeout=None):
+        self.requests.append((request, timeout))
+        return FakeResponse(self.responses.pop(0))
 
 
 class FakeAPI:
@@ -92,6 +119,56 @@ class Tests(unittest.TestCase):
             ("1", "2"),
             (bw_code(20), bw_code(40)),
         )
+
+    def test_automatic_authentication_and_session_check(self):
+        config = copy.deepcopy(self.cfg)
+        opener = FakeOpener([
+            {
+                "stok": "a" * 32,
+                "clientIpAddr": "192.168.1.50",
+            },
+            {
+                "success": 1,
+                "test": 1,
+                "device_props": {},
+            },
+        ])
+
+        with tempfile.TemporaryDirectory() as directory:
+            credentials = Path(directory) / "credentials.json"
+            credentials.write_text(
+                '{"username":"admin","password":"secret"}',
+                encoding="utf-8",
+            )
+            credentials.chmod(0o600)
+            api = CambiumAPI(config, opener=opener)
+
+            self.assertTrue(api.authenticate(credentials))
+            self.assertEqual("a" * 32, api.stok)
+            self.assertEqual(2, len(opener.requests))
+            self.assertEqual(
+                "/cgi-bin/luci",
+                opener.requests[0][0].full_url.split("192.168.1.8")[1],
+            )
+            self.assertIn(
+                "/admin/test_connect",
+                opener.requests[1][0].full_url,
+            )
+
+    def test_rejects_insecure_credentials_file(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            credentials = Path(directory) / "credentials.json"
+            credentials.write_text(
+                '{"username":"admin","password":"secret"}',
+                encoding="utf-8",
+            )
+            credentials.chmod(0o644)
+            api = CambiumAPI(config, opener=FakeOpener([]))
+
+            with self.assertRaises(CampaignError):
+                api.authenticate(credentials)
 
     def test_six_treatments(self):
         self.assertEqual(

@@ -10,20 +10,9 @@
   },
   "experiment": {
     "days_per_treatment": 7,
-    "block_lengths_days": [
-      3,
-      2,
-      2
-    ],
-    "frequency_levels_mhz": [
-      6475,
-      6655,
-      7000
-    ],
-    "bandwidth_levels_mhz": [
-      20,
-      40
-    ],
+    "block_lengths_days": [3, 2, 2],
+    "frequency_levels_mhz": [6475, 6655, 7000],
+    "bandwidth_levels_mhz": [20, 40],
     "order_seed": 20260908,
     "start_local": "2026-09-16T00:00:00-05:00"
   },
@@ -37,7 +26,8 @@
   },
   "api": {
     "scheme": "https",
-    "auth_mode": "stok_env",
+    "auth_mode": "credentials_file",
+    "credentials_file": "~/.config/andean-6ghz-link/ap_credentials.json",
     "stok_env": "CAMBIUM_AP_STOK",
     "request_timeout_seconds": 15,
     "tls_verify": false
