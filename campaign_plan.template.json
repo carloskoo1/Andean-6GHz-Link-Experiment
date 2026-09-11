@@ -10,11 +10,22 @@
   },
   "experiment": {
     "days_per_treatment": 7,
-    "block_lengths_days": [3, 2, 2],
-    "frequency_levels_mhz": [6475, 6655, 7000],
-    "bandwidth_levels_mhz": [20, 40],
+    "block_lengths_days": [
+      3,
+      2,
+      2
+    ],
+    "frequency_levels_mhz": [
+      6475,
+      6655,
+      7000
+    ],
+    "bandwidth_levels_mhz": [
+      20,
+      40
+    ],
     "order_seed": 20260908,
-    "start_local": "2026-09-16T00:00:00-05:00"
+    "start_local": "2026-09-15T00:00:00-05:00"
   },
   "network": {
     "ap_name": "CU01",
@@ -44,5 +55,18 @@
     "event_log": "campaign_events.jsonl",
     "state": "campaign_state.json",
     "schedule": "campaign_schedule.csv"
+  },
+  "active_test": {
+    "protocol": "TCP",
+    "duration_seconds": 15,
+    "omit_seconds": 2,
+    "parallel_streams": 1,
+    "directions": [
+      "DL",
+      "UL"
+    ],
+    "execution_mode": "sequential",
+    "interval_minutes": 60,
+    "minute_offset": 5
   }
 }

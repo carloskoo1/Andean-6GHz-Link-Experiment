@@ -1,0 +1,14 @@
+[Unit]
+Description=Andean 6 GHz formal throughput measurement
+After=network-online.target andean-campaign.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=carlos
+Group=carlos
+WorkingDirectory=/home/carlos/Proyectos/Andean-6GHz-Link-Experiment
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_throughput_runner.py --config /home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_plan.template.json
+Nice=10
+TimeoutStartSec=180

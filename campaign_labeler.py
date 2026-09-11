@@ -30,18 +30,54 @@ def label_for(rows, timestamp):
     return None
 
 
-def configuration_match(row, label):
+def configuration_match(row, label, table, active_test):
     if label is None:
         return "OUTSIDE_SCHEDULE"
+
     frequency = row.get("operating_frequency_mhz")
     bandwidth = row.get("channel_bandwidth_mhz")
+
     if frequency is None or bandwidth is None:
         return "MISSING_CONFIGURATION"
-    return "YES" if (int(float(frequency)) == int(label["frequency_mhz"]) and
-                     int(float(bandwidth)) == int(label["bandwidth_mhz"])) else "NO"
+
+    radio_match = (
+        int(float(frequency)) == int(label["frequency_mhz"])
+        and int(float(bandwidth)) == int(label["bandwidth_mhz"])
+    )
+
+    if not radio_match:
+        return "NO"
+
+    if table == "active_throughput_6g":
+        protocol = str(row.get("protocol") or "").upper()
+        duration = row.get("duration_seconds")
+        omit = row.get("omit_seconds")
+        parallel = row.get("parallel_streams")
+
+        if None in (duration, omit, parallel):
+            return "MISSING_TEST_CONFIGURATION"
+
+        test_match = (
+            protocol == str(active_test["protocol"]).upper()
+            and int(duration) == int(active_test["duration_seconds"])
+            and int(omit) == int(active_test["omit_seconds"])
+            and int(parallel) == int(active_test["parallel_streams"])
+        )
+
+        return "YES" if test_match else "NO_TEST_PROTOCOL"
+
+    return "YES"
 
 
-def export_table(connection, table, timestamp_field, rows, campaign_id, output):
+def export_table(
+    connection,
+    table,
+    timestamp_field,
+    rows,
+    campaign_id,
+    active_test,
+    output,
+):
     cursor = connection.execute(f'SELECT * FROM "{table}" ORDER BY "{timestamp_field}"')
     original = [item[0] for item in cursor.description]
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -53,7 +89,12 @@ def export_table(connection, table, timestamp_field, rows, campaign_id, output):
             source = dict(zip(original, values))
             timestamp = source.get(timestamp_field)
             label = label_for(rows, timestamp) if timestamp else None
-            match = configuration_match(source, label)
+            match = configuration_match(
+                source,
+                label,
+                table,
+                active_test,
+            )
             record = {
                 "design_campaign_id": campaign_id,
                 "design_phase": label["phase"] if label else "OUTSIDE_SCHEDULE",
@@ -88,7 +129,15 @@ def main():
             if table not in existing:
                 raise SystemExit(f"ERROR: falta la tabla {table}.")
             output = args.output_directory / f"{table}_3x2_labeled.csv"
-            counts = export_table(connection, table, timestamp_field, rows, config["campaign_id"], output)
+            counts = export_table(
+                connection,
+                table,
+                timestamp_field,
+                rows,
+                config["campaign_id"],
+                config["active_test"],
+                output,
+            )
             print(f"{output}: {counts}")
     finally:
         connection.close()
