@@ -19,7 +19,7 @@ class LabelerTests(unittest.TestCase):
         self.assertEqual("BASE_7000_20", row["scenario_id"])
 
     def test_gap_is_outside_schedule(self):
-        self.assertIsNone(label_for(self.rows, "2026-09-15T10:00:00-05:00"))
+        self.assertIsNone(label_for(self.rows, "2026-08-31T23:59:59-05:00"))
 
     def test_first_treatment(self):
         row = label_for(self.rows, "2026-09-16T00:01:00-05:00")
@@ -27,8 +27,36 @@ class LabelerTests(unittest.TestCase):
 
     def test_configuration_match(self):
         label = {"frequency_mhz": 6655, "bandwidth_mhz": 20}
-        self.assertEqual("YES", configuration_match({"operating_frequency_mhz": 6655.0, "channel_bandwidth_mhz": 20.0}, label))
-        self.assertEqual("NO", configuration_match({"operating_frequency_mhz": 7000.0, "channel_bandwidth_mhz": 20.0}, label))
+        active_test = {
+            "protocol": "TCP",
+            "duration_seconds": 15,
+            "omit_seconds": 2,
+            "parallel_streams": 1,
+        }
+        self.assertEqual(
+            "YES",
+            configuration_match(
+                {
+                    "operating_frequency_mhz": 6655.0,
+                    "channel_bandwidth_mhz": 20.0,
+                },
+                label,
+                "radio_link_local",
+                active_test,
+            ),
+        )
+        self.assertEqual(
+            "NO",
+            configuration_match(
+                {
+                    "operating_frequency_mhz": 7000.0,
+                    "channel_bandwidth_mhz": 20.0,
+                },
+                label,
+                "radio_link_local",
+                active_test,
+            ),
+        )
 
 
 if __name__ == "__main__":

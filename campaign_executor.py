@@ -86,6 +86,22 @@ def run_once(config_path, instant=None, dry_run=False, runner=subprocess.run):
     state_path = output / "executor_state.json"
     failure_path = output / "executor_failure.json"
     lock_path = output / "executor.lock"
+    safe_abort_path = output / "SAFE_ABORT.json"
+
+    if safe_abort_path.exists():
+        try:
+            safe_abort = json.loads(
+                safe_abort_path.read_text(encoding="utf-8")
+            )
+            status = safe_abort.get("status", "UNKNOWN")
+        except Exception:
+            status = "UNREADABLE"
+
+        print(
+            f"SAFE_ABORT activo: {status}. "
+            "Transiciones RF automaticas bloqueadas."
+        )
+        return 3
 
     with lock_path.open("w", encoding="utf-8") as lock:
         try:

@@ -163,11 +163,33 @@ class Orchestrator:
         d=self.api.read()
         if str(d.get("centerFrequency"))!=str(s["frequency_mhz"]) or str(d.get("wirelessInterfaceHTMode"))!=bw_code(s["bandwidth_mhz"]): raise CampaignError(f"Configuración inesperada: {d.get('centerFrequency')}/{d.get('wirelessInterfaceHTMode')}")
     def switch(self,s):
-        self.event("SWITCH_START",s,"STARTED")
-
         if self.dry:
+            self.event("SWITCH_START",s,"STARTED")
             self.event("SWITCH_COMMITTED",s,"DRY_RUN")
             return
+
+        safe_abort_path = self.out / "SAFE_ABORT.json"
+        if safe_abort_path.exists():
+            try:
+                safe_abort = json.loads(
+                    safe_abort_path.read_text(encoding="utf-8")
+                )
+                status = safe_abort.get("status", "UNKNOWN")
+            except Exception:
+                status = "UNREADABLE"
+
+            self.event(
+                "SWITCH_BLOCKED",
+                s,
+                "SAFE_ABORT",
+                f"status={status}",
+            )
+            raise CampaignError(
+                f"SAFE_ABORT activo: {status}. "
+                "Transiciones RF bloqueadas hasta completar recuperación."
+            )
+
+        self.event("SWITCH_START",s,"STARTED")
 
         if not self.probes():
             raise CampaignError(
@@ -309,6 +331,33 @@ class Orchestrator:
                     previous,
                     "AUTO_ROLLBACK",
                     str(rollback_error),
+                )
+
+                safe_abort_path = self.out / "SAFE_ABORT.json"
+                safe_abort_tmp = self.out / "SAFE_ABORT.tmp"
+                safe_abort_tmp.write_text(
+                    json.dumps(
+                        {
+                            "created_utc": now(),
+                            "status": "RECOVERY_REQUIRED",
+                            "failed_scenario": s,
+                            "expected_baseline": previous,
+                            "switch_error": str(original_error),
+                            "rollback_error": str(rollback_error),
+                            "automatic_rf_transitions_blocked": True,
+                        },
+                        indent=2,
+                        ensure_ascii=False,
+                    ) + "\n",
+                    encoding="utf-8",
+                )
+                safe_abort_tmp.replace(safe_abort_path)
+
+                self.event(
+                    "SAFE_ABORT",
+                    s,
+                    "RECOVERY_REQUIRED",
+                    f"state_file={safe_abort_path}",
                 )
 
             raise

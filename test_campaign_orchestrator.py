@@ -81,6 +81,19 @@ class FakeAPI:
         self.pending_previous = None
 
 
+class RollbackFailAPI(FakeAPI):
+    """Fake API que simula fallo al cancelar un trial."""
+
+    def finish(self, apply):
+        self.calls.append(("finish", apply))
+
+        if not apply:
+            raise CampaignError("rollback simulado fallido")
+
+        self.pending_previous = None
+
+
+
 class ControlledOrchestrator(Orchestrator):
     def __init__(self, *args, fail_stable_call=None, **kwargs):
         super().__init__(*args, **kwargs)
@@ -191,7 +204,7 @@ class Tests(unittest.TestCase):
             rows[0]["end_local"],
         )
         self.assertEqual(
-            "2026-09-16T00:00:00-05:00",
+            "2026-09-15T00:00:00-05:00",
             rows[1]["start_local"],
         )
 
@@ -232,6 +245,85 @@ class Tests(unittest.TestCase):
                 },
                 api.props,
             )
+
+    def test_safe_abort_blocks_direct_switch(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            config["outputs"]["directory"] = directory
+            api = FakeAPI()
+
+            safe_abort_path = Path(directory) / "SAFE_ABORT.json"
+            safe_abort_path.write_text(
+                '{"status":"RECOVERY_REQUIRED",'
+                '"automatic_rf_transitions_blocked":true}',
+                encoding="utf-8",
+            )
+
+            orchestrator = ControlledOrchestrator(
+                config,
+                HERE / "x",
+                api,
+            )
+
+            with self.assertRaisesRegex(
+                CampaignError,
+                "SAFE_ABORT",
+            ):
+                orchestrator.switch(self.make_scenario())
+
+            self.assertEqual([], api.calls)
+
+
+    def test_rollback_failure_creates_safe_abort(self):
+        config = copy.deepcopy(self.cfg)
+
+        with tempfile.TemporaryDirectory() as directory:
+            config["outputs"]["directory"] = directory
+            api = RollbackFailAPI()
+            orchestrator = ControlledOrchestrator(
+                config,
+                HERE / "x",
+                api,
+                fail_stable_call=1,
+            )
+
+            with self.assertRaises(Exception):
+                orchestrator.switch(self.make_scenario())
+
+            safe_abort_path = Path(directory) / "SAFE_ABORT.json"
+
+            self.assertTrue(safe_abort_path.exists())
+
+            import json
+            payload = json.loads(
+                safe_abort_path.read_text(encoding="utf-8")
+            )
+
+            self.assertEqual(
+                "RECOVERY_REQUIRED",
+                payload["status"],
+            )
+            self.assertTrue(
+                payload["automatic_rf_transitions_blocked"]
+            )
+            self.assertEqual(
+                "F7000_B40",
+                payload["failed_scenario"]["scenario_id"],
+            )
+            self.assertEqual(
+                7000,
+                payload["expected_baseline"]["frequency_mhz"],
+            )
+            self.assertEqual(
+                20,
+                payload["expected_baseline"]["bandwidth_mhz"],
+            )
+            self.assertIn(
+                "rollback simulado fallido",
+                payload["rollback_error"],
+            )
+
 
     def test_failure_before_confirmation_cancels_trial(self):
         config = copy.deepcopy(self.cfg)

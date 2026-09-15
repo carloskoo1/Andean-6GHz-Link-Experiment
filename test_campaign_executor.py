@@ -17,7 +17,7 @@ class ExecutorTests(unittest.TestCase):
         self.rows = schedule(self.config)
 
     def test_before_experiment_has_no_active_experiment(self):
-        row = active_row(self.rows, datetime.fromisoformat("2026-09-15T10:00:00-05:00"))
+        row = active_row(self.rows, datetime.fromisoformat("2026-08-31T23:59:59-05:00"))
         self.assertIsNone(row)
 
     def test_first_experimental_row(self):
@@ -46,6 +46,50 @@ class ExecutorTests(unittest.TestCase):
             run_once(cfg, datetime.fromisoformat("2026-09-16T00:01:00-05:00"), True, runner)
             self.assertFalse((Path(directory) / "executor_state.json").exists())
             self.assertIn("--dry-run", runner.call_args.args[0])
+
+    def test_safe_abort_blocks_runner(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config = copy.deepcopy(self.config)
+            config["outputs"]["directory"] = directory
+
+            cfg = Path(directory) / "campaign_plan.template.json"
+
+            import json
+            cfg.write_text(
+                json.dumps(config),
+                encoding="utf-8",
+            )
+
+            (Path(directory) / "campaign_orchestrator.py").write_text(
+                "",
+                encoding="utf-8",
+            )
+
+            safe_abort_path = Path(directory) / "SAFE_ABORT.json"
+            safe_abort_path.write_text(
+                json.dumps(
+                    {
+                        "status": "RECOVERY_REQUIRED",
+                        "automatic_rf_transitions_blocked": True,
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            runner = Mock(return_value=Mock(returncode=0))
+
+            rc = run_once(
+                cfg,
+                datetime.fromisoformat(
+                    "2026-09-16T00:01:00-05:00"
+                ),
+                False,
+                runner,
+            )
+
+            self.assertEqual(3, rc)
+            runner.assert_not_called()
+
 
     def test_success_is_idempotent(self):
         with tempfile.TemporaryDirectory() as directory:
