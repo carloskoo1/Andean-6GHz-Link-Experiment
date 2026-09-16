@@ -150,7 +150,10 @@ def run_once(config_path, instant=None, dry_run=False, runner=subprocess.run):
         if result.returncode:
             message = f"Falló la transición a {row['scenario_id']} (rc={result.returncode})."
             if not dry_run:
-                attempts = int(failure.get("attempts", 0)) + 1
+                if failure.get("failed_sequence") == row["sequence"]:
+                    attempts = int(failure.get("attempts", 0)) + 1
+                else:
+                    attempts = 1
                 save_failure(failure_path, row, instant, message, attempts)
             raise CampaignError(message)
         if not dry_run:
