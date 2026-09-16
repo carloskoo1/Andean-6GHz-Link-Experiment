@@ -116,8 +116,26 @@ def run_once(config_path, instant=None, dry_run=False, runner=subprocess.run):
             return 0
 
         failure = load_executor_state(failure_path)
-        retry_seconds = int(config.get("safety", {}).get("executor_retry_seconds", 1800))
+        safety = config.get("safety", {})
+        retry_seconds = int(safety.get("executor_retry_seconds", 1800))
+        max_attempts = int(safety.get("executor_max_attempts", 3))
+
+        if max_attempts < 1:
+            raise CampaignError(
+                "executor_max_attempts debe ser >= 1."
+            )
+
         if failure.get("failed_sequence") == row["sequence"]:
+            attempts = int(failure.get("attempts", 0))
+
+            if attempts >= max_attempts:
+                print(
+                    f"Reintentos agotados para {row['scenario_id']}: "
+                    f"{attempts}/{max_attempts}. "
+                    "Transiciones RF automaticas bloqueadas para esta secuencia."
+                )
+                return 3
+
             last_failure = datetime.fromisoformat(failure["last_failure_local"])
             if instant < last_failure + timedelta(seconds=retry_seconds):
                 print(f"Reintento aplazado para {row['scenario_id']}.")

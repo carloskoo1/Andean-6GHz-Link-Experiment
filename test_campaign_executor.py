@@ -121,5 +121,56 @@ class ExecutorTests(unittest.TestCase):
             self.assertEqual(1, runner.call_count)
 
 
+    def test_failure_stops_after_max_attempts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config = copy.deepcopy(self.config)
+            config["outputs"]["directory"] = directory
+            config.setdefault("safety", {})["executor_max_attempts"] = 3
+
+            cfg = Path(directory) / "campaign_plan.template.json"
+
+            import json
+            cfg.write_text(
+                json.dumps(config),
+                encoding="utf-8",
+            )
+
+            (Path(directory) / "campaign_orchestrator.py").write_text(
+                "",
+                encoding="utf-8",
+            )
+
+            failure_path = Path(directory) / "executor_failure.json"
+            failure_path.write_text(
+                json.dumps({
+                    "failed_sequence": 1,
+                    "failed_scenario_id": "F6655_B20",
+                    "last_failure_local": "2026-09-15T22:00:00-05:00",
+                    "attempts": 3,
+                    "error": "Falló la transición a F6655_B20 (rc=2).",
+                }),
+                encoding="utf-8",
+            )
+
+            runner = Mock(return_value=Mock(returncode=0))
+
+            rc = run_once(
+                cfg,
+                datetime.fromisoformat(
+                    "2026-09-16T00:01:00-05:00"
+                ),
+                False,
+                runner,
+            )
+
+            self.assertEqual(3, rc)
+            runner.assert_not_called()
+
+            failure = json.loads(
+                failure_path.read_text(encoding="utf-8")
+            )
+            self.assertEqual(3, failure["attempts"])
+
+
 if __name__ == "__main__":
     unittest.main()
