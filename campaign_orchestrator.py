@@ -119,9 +119,20 @@ class CambiumAPI:
         self.stok=str(payload.get("stok","")).strip()
         if len(self.stok)!=32:
             raise CampaignError(f"Autenticación rechazada por el AP: {payload.get('msg','respuesta sin STOK')}")
-        check=self.post("test_connect",{})
+        try:
+            check=self.post("test_connect",{})
+        except Exception:
+            try:
+                self.logout()
+            except Exception:
+                pass
+            raise
+
         if str(check.get("test"))!="1":
-            self.stok=""
+            try:
+                self.logout()
+            except Exception:
+                pass
             raise CampaignError("El AP creó una sesión que no superó test_connect.")
         return True
     def post(self,endpoint,form):
@@ -130,6 +141,23 @@ class CambiumAPI:
         p=self.request(url,form)
         if str(p.get("success")).lower() not in {"1","true"} or p.get("err"): raise CampaignError(f"API rechazó {endpoint}: {p}")
         return p
+    def logout(self):
+        if not self.stok:
+            return
+
+        a = self.c["api"]
+        ip = self.c["network"]["ap_ip"]
+        token = urllib.parse.quote(self.stok, safe="")
+        url = (
+            f"{a.get('scheme','http')}://{ip}"
+            f"/cgi-bin/luci/;stok={token}/admin/logout"
+        )
+
+        try:
+            self.request(url, {"debug": "true"})
+        finally:
+            self.stok = ""
+
     def read(self):
         p=self.post("get_param",{"act":"config_regular","debug":"true"}); d=p.get("device_props"); t=p.get("template_props",{})
         if not isinstance(d,dict): raise CampaignError("get_param no devolvió device_props.")
@@ -506,51 +534,65 @@ def main():
 
         dry = getattr(args, "dry_run", False)
         api = CambiumAPI(config, "DRY" if dry else "")
+        owns_session = False
+
         if not dry:
             auth_mode=config["api"]["auth_mode"]
             if auth_mode=="credentials_file":
                 api.authenticate(config["api"]["credentials_file"])
+                owns_session = True
             else:
                 api.stok=os.environ.get(config["api"]["stok_env"],"").strip()
                 if not api.stok:
                     raise CampaignError(f"Falta {config['api']['stok_env']}.")
 
-        orchestrator = Orchestrator(
-            config,
-            args.config,
-            api,
-            dry,
-        )
-
-        if args.action == "preflight":
-            properties = api.read()
-            if not orchestrator.probes():
-                raise CampaignError(
-                    "Preflight falló: AP, SM y RPi deben responder."
-                )
-            frequency = properties.get("centerFrequency", "desconocida")
-            bandwidth = properties.get(
-                "wirelessInterfaceHTMode",
-                "desconocido",
+        try:
+            orchestrator = Orchestrator(
+                config,
+                args.config,
+                api,
+                dry,
             )
-            print("Autenticación automática: OK")
-            print("Cookie y test_connect: OK")
-            print("Conectividad AP/SM/RPi: OK")
-            print(f"centerFrequency actual: {frequency}")
-            print(f"wirelessInterfaceHTMode actual: {bandwidth}")
-            return 0
 
-        selected = scenario(config, args.scenario)
-
-        if args.action == "pilot":
-            if not 60 <= args.dwell_seconds <= 1800:
-                raise CampaignError(
-                    "El piloto debe durar entre 60 y 1800 segundos."
+            if args.action == "preflight":
+                properties = api.read()
+                if not orchestrator.probes():
+                    raise CampaignError(
+                        "Preflight falló: AP, SM y RPi deben responder."
+                    )
+                frequency = properties.get("centerFrequency", "desconocida")
+                bandwidth = properties.get(
+                    "wirelessInterfaceHTMode",
+                    "desconocido",
                 )
-            orchestrator.pilot(selected, args.dwell_seconds)
-        else:
-            orchestrator.switch(selected)
-        return 0
+                print("Autenticación automática: OK")
+                print("Cookie y test_connect: OK")
+                print("Conectividad AP/SM/RPi: OK")
+                print(f"centerFrequency actual: {frequency}")
+                print(f"wirelessInterfaceHTMode actual: {bandwidth}")
+                return 0
+
+            selected = scenario(config, args.scenario)
+
+            if args.action == "pilot":
+                if not 60 <= args.dwell_seconds <= 1800:
+                    raise CampaignError(
+                        "El piloto debe durar entre 60 y 1800 segundos."
+                    )
+                orchestrator.pilot(selected, args.dwell_seconds)
+            else:
+                orchestrator.switch(selected)
+            return 0
+        finally:
+            if owns_session:
+                try:
+                    api.logout()
+                except Exception as cleanup_error:
+                    print(
+                        f"WARNING: no se pudo cerrar la sesión API: "
+                        f"{cleanup_error}",
+                        file=sys.stderr,
+                    )
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 2

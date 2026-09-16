@@ -415,7 +415,10 @@ def cambium_api_probe(config):
 
     api.authenticate(credentials)
 
-    return True
+    try:
+        return True
+    finally:
+        api.logout()
 
 
 # ---------------------------------------------------------------------------

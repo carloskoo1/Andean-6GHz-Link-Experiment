@@ -729,6 +729,7 @@ class RecoveryConcreteProbeTests(unittest.TestCase):
         self.assertTrue(result)
         api_class.assert_called_once_with(config)
         fake_api.authenticate.assert_called_once()
+        fake_api.logout.assert_called_once_with()
 
         # Diagnostic API probe must not read or mutate RF configuration.
         fake_api.read.assert_not_called()

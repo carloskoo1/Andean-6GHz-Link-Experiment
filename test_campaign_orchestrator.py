@@ -1,6 +1,7 @@
 import copy
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest.mock import patch
 
@@ -167,6 +168,126 @@ class Tests(unittest.TestCase):
                 "/admin/test_connect",
                 opener.requests[1][0].full_url,
             )
+
+    def test_authentication_failure_logs_out_created_session(self):
+        config = copy.deepcopy(self.cfg)
+        opener = FakeOpener([
+            {
+                "stok": "a" * 32,
+                "clientIpAddr": "192.168.1.50",
+            },
+            {
+                "success": 1,
+                "test": 0,
+            },
+            {
+                "success": 1,
+            },
+        ])
+
+        with tempfile.TemporaryDirectory() as directory:
+            credentials = Path(directory) / "credentials.json"
+            credentials.write_text(
+                '{"username":"admin","password":"secret"}',
+                encoding="utf-8",
+            )
+            credentials.chmod(0o600)
+
+            api = CambiumAPI(config, opener=opener)
+
+            with self.assertRaises(CampaignError):
+                api.authenticate(credentials)
+
+        self.assertEqual(3, len(opener.requests))
+        self.assertIn(
+            "/admin/logout",
+            opener.requests[2][0].full_url,
+        )
+        self.assertEqual(
+            b"debug=true",
+            opener.requests[2][0].data,
+        )
+        self.assertEqual("", api.stok)
+
+    def test_authentication_test_connect_exception_logs_out_created_session(self):
+        config = copy.deepcopy(self.cfg)
+
+        class TestConnectExceptionOpener:
+            def __init__(self):
+                self.requests = []
+
+            def open(self, request, timeout=None, context=None):
+                self.requests.append((request, timeout))
+
+                if len(self.requests) == 1:
+                    return FakeResponse({
+                        "stok": "a" * 32,
+                        "clientIpAddr": "192.168.1.50",
+                    })
+
+                if len(self.requests) == 2:
+                    raise urllib.error.URLError(
+                        "test_connect simulado fallido"
+                    )
+
+                if len(self.requests) == 3:
+                    return FakeResponse({"result": "ok"})
+
+                raise AssertionError("Solicitud API inesperada")
+
+        opener = TestConnectExceptionOpener()
+
+        with tempfile.TemporaryDirectory() as directory:
+            credentials = Path(directory) / "credentials.json"
+            credentials.write_text(
+                '{"username":"admin","password":"secret"}',
+                encoding="utf-8",
+            )
+            credentials.chmod(0o600)
+
+            api = CambiumAPI(config, opener=opener)
+
+            with self.assertRaises(Exception):
+                api.authenticate(credentials)
+
+        self.assertEqual(3, len(opener.requests))
+        self.assertIn(
+            "/admin/logout",
+            opener.requests[2][0].full_url,
+        )
+        self.assertEqual(
+            b"debug=true",
+            opener.requests[2][0].data,
+        )
+        self.assertEqual("", api.stok)
+
+    def test_logout_posts_debug_true_and_clears_stok(self):
+        config = copy.deepcopy(self.cfg)
+        opener = FakeOpener([
+            {
+                "result": "ok",
+            },
+        ])
+        api = CambiumAPI(
+            config,
+            stok="a" * 32,
+            opener=opener,
+        )
+
+        api.logout()
+
+        self.assertEqual(1, len(opener.requests))
+        request, _timeout = opener.requests[0]
+
+        self.assertIn(
+            "/cgi-bin/luci/;stok=" + ("a" * 32) + "/admin/logout",
+            request.full_url,
+        )
+        self.assertEqual(
+            b"debug=true",
+            request.data,
+        )
+        self.assertEqual("", api.stok)
 
     def test_rejects_insecure_credentials_file(self):
         config = copy.deepcopy(self.cfg)
@@ -475,6 +596,141 @@ class Tests(unittest.TestCase):
                 orchestrator.pilot(invalid_target, 600)
 
             self.assertEqual([], api.calls)
+
+
+class MainSessionLifecycleTests(unittest.TestCase):
+
+    def test_preflight_logs_out_credentials_session(self):
+        from unittest.mock import MagicMock
+        import campaign_orchestrator
+
+        config = load_config(HERE / "campaign_plan.template.json")
+        config = copy.deepcopy(config)
+        config["api"]["auth_mode"] = "credentials_file"
+        config["api"]["credentials_file"] = "/tmp/fake_credentials.json"
+
+        api = MagicMock()
+        api.read.return_value = {
+            "centerFrequency": "6655",
+            "wirelessInterfaceHTMode": "1",
+        }
+
+        orchestrator = MagicMock()
+        orchestrator.probes.return_value = True
+
+        with patch(
+            "campaign_orchestrator.load_config",
+            return_value=config,
+        ), patch(
+            "campaign_orchestrator.CambiumAPI",
+            return_value=api,
+        ), patch(
+            "campaign_orchestrator.Orchestrator",
+            return_value=orchestrator,
+        ), patch(
+            "sys.argv",
+            [
+                "campaign_orchestrator.py",
+                "preflight",
+                "--config",
+                "fake.json",
+            ],
+        ):
+            rc = campaign_orchestrator.main()
+
+        self.assertEqual(0, rc)
+        api.authenticate.assert_called_once_with(
+            "/tmp/fake_credentials.json"
+        )
+        api.logout.assert_called_once_with()
+
+    def test_preflight_does_not_logout_external_stok(self):
+        from unittest.mock import MagicMock
+        import campaign_orchestrator
+
+        config = load_config(HERE / "campaign_plan.template.json")
+        config = copy.deepcopy(config)
+        config["api"]["auth_mode"] = "stok_env"
+        config["api"]["stok_env"] = "CAMBIUM_TEST_STOK"
+
+        api = MagicMock()
+        api.read.return_value = {
+            "centerFrequency": "6655",
+            "wirelessInterfaceHTMode": "1",
+        }
+
+        orchestrator = MagicMock()
+        orchestrator.probes.return_value = True
+
+        with patch(
+            "campaign_orchestrator.load_config",
+            return_value=config,
+        ), patch(
+            "campaign_orchestrator.CambiumAPI",
+            return_value=api,
+        ), patch(
+            "campaign_orchestrator.Orchestrator",
+            return_value=orchestrator,
+        ), patch.dict(
+            "os.environ",
+            {"CAMBIUM_TEST_STOK": "b" * 32},
+        ), patch(
+            "sys.argv",
+            [
+                "campaign_orchestrator.py",
+                "preflight",
+                "--config",
+                "fake.json",
+            ],
+        ):
+            rc = campaign_orchestrator.main()
+
+        self.assertEqual(0, rc)
+        api.authenticate.assert_not_called()
+        api.logout.assert_not_called()
+
+
+    def test_switch_logout_failure_does_not_turn_success_into_rf_failure(self):
+        from unittest.mock import MagicMock
+        import campaign_orchestrator
+
+        config = load_config(HERE / "campaign_plan.template.json")
+        config = copy.deepcopy(config)
+        config["api"]["auth_mode"] = "credentials_file"
+        config["api"]["credentials_file"] = "/tmp/fake_credentials.json"
+
+        api = MagicMock()
+        api.logout.side_effect = CampaignError(
+            "logout simulado fallido"
+        )
+
+        orchestrator = MagicMock()
+
+        with patch(
+            "campaign_orchestrator.load_config",
+            return_value=config,
+        ), patch(
+            "campaign_orchestrator.CambiumAPI",
+            return_value=api,
+        ), patch(
+            "campaign_orchestrator.Orchestrator",
+            return_value=orchestrator,
+        ), patch(
+            "sys.argv",
+            [
+                "campaign_orchestrator.py",
+                "switch",
+                "--config",
+                "fake.json",
+                "--scenario",
+                "F6655_B20",
+            ],
+        ):
+            rc = campaign_orchestrator.main()
+
+        orchestrator.switch.assert_called_once()
+        api.logout.assert_called_once_with()
+        self.assertEqual(0, rc)
 
 
 if __name__ == "__main__":
