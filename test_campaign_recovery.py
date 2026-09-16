@@ -953,3 +953,91 @@ class RecoveryConfiguredEligibilityTests(unittest.TestCase):
                 observed_protected_description="Cunacales",
             )
         )
+
+
+class RecoveryStrictPowerEligibilityTests(unittest.TestCase):
+
+    def test_string_false_cannot_authorize_recovery(self):
+        from campaign_recovery import configured_recovery_eligible
+
+        recovery_config = {
+            "cnmatrix": {
+                "expected_mac": "30:CB:C7:BA:56:E1",
+            },
+            "target": {
+                "port": 6,
+                "description": "Cunacales6",
+            },
+            "protected": {
+                "port": 3,
+                "description": "Cunacales",
+            },
+        }
+
+        eligible = configured_recovery_eligible(
+            recovery_config=recovery_config,
+            health_state="RECOVERY_REQUIRED",
+            observed_switch_mac="30:CB:C7:BA:56:E1",
+            observed_target_port=6,
+            observed_target_description="Cunacales6",
+            observed_target_delivering_power="false",
+            observed_protected_port=3,
+            observed_protected_description="Cunacales",
+        )
+
+        self.assertFalse(eligible)
+
+    def test_only_literal_boolean_true_can_satisfy_power_gate(self):
+        from campaign_recovery import configured_recovery_eligible
+
+        recovery_config = {
+            "cnmatrix": {
+                "expected_mac": "30:CB:C7:BA:56:E1",
+            },
+            "target": {
+                "port": 6,
+                "description": "Cunacales6",
+            },
+            "protected": {
+                "port": 3,
+                "description": "Cunacales",
+            },
+        }
+
+        def eligible(power_value):
+            return configured_recovery_eligible(
+                recovery_config=recovery_config,
+                health_state="RECOVERY_REQUIRED",
+                observed_switch_mac="30:CB:C7:BA:56:E1",
+                observed_target_port=6,
+                observed_target_description="Cunacales6",
+                observed_target_delivering_power=power_value,
+                observed_protected_port=3,
+                observed_protected_description="Cunacales",
+            )
+
+        # The safety gate accepts exactly the boolean singleton True.
+        self.assertTrue(eligible(True))
+
+        rejected_values = (
+            False,
+            None,
+            0,
+            1,
+            "false",
+            "true",
+            "False",
+            "True",
+            "",
+            [],
+            [True],
+            {},
+            {"value": True},
+        )
+
+        for value in rejected_values:
+            with self.subTest(
+                value=repr(value),
+                value_type=type(value).__name__,
+            ):
+                self.assertFalse(eligible(value))

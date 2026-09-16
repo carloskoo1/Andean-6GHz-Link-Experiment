@@ -601,7 +601,10 @@ def configured_recovery_eligible(
     ):
         return False
 
-    if not observed_target_delivering_power:
+    # Fail closed: recovery eligibility requires an explicit boolean True.
+    # Truthy values such as "true", "false", 1, or non-empty strings must
+    # never authorize a recovery path.
+    if observed_target_delivering_power is not True:
         return False
 
     if observed_protected_port != expected_protected_port:
