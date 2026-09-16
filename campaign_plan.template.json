@@ -68,5 +68,21 @@
     "execution_mode": "sequential",
     "interval_minutes": 60,
     "minute_offset": 5
+  },
+  "recovery": {
+    "mode": "diagnostic_only",
+    "cnmatrix": {
+      "management_ipv4": "192.168.1.32",
+      "management_ipv6_link_local": "fe80::32cb:c7ff:feba:56e1%enp1s0",
+      "expected_mac": "30:CB:C7:BA:56:E1"
+    },
+    "target": {
+      "port": 6,
+      "description": "Cunacales6"
+    },
+    "protected": {
+      "port": 3,
+      "description": "Cunacales"
+    }
   }
 }
