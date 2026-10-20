@@ -1,0 +1,53 @@
+{
+  "mode": "LAB_ONLY",
+  "date_peru": "2026-10-19",
+  "tests": {
+    "V5": {
+      "count": 44,
+      "pass": true
+    },
+    "V5_optimized": {
+      "count": 44,
+      "pass": true
+    },
+    "v2": {
+      "count": 35,
+      "pass": true
+    },
+    "v3": {
+      "count": 27,
+      "pass": true
+    },
+    "v4": {
+      "count": 37,
+      "pass": true
+    },
+    "original": {
+      "count": 76,
+      "pass": true
+    }
+  },
+  "distinct_tests": 219,
+  "cu01_contacted": false,
+  "live_enabled": false,
+  "tcp_executed": false,
+  "tcp_profile_approved": false,
+  "expert_approvals_verified": false,
+  "original_source_unchanged": {
+    "campaign_orchestrator.py": true,
+    "campaign_executor.py": true,
+    "campaign_plan.template.json": true,
+    "campaign_runtime/campaign_schedule.csv": true,
+    "andean-campaign.timer": true,
+    "andean-campaign.service": true
+  },
+  "calendar_slots": 49,
+  "treatment_slots": 42,
+  "reserve_slots": 7,
+  "fault_scenarios": 4,
+  "source_sha256": {
+    "campaign_orchestrator.py": "f3aa7fd5cf8ebc507fc5074b58bfead11e97aea1851f2cf499d6d960c7195558",
+    "prospective_28d/v4/safety.py": "291d7b463d4b9172f430c195a970629a617bae386d9b86be3a0ff35a7e702d4d",
+    "prospective_28d/v5/executor.py": "0171822dc573e3731f67e198049122a64356cb23c616456654385cb4ef6a5128"
+  }
+}

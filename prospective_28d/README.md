@@ -17,3 +17,7 @@ La [V3](v3/README.md) ensaya el adaptador con la implementación existente de tr
 ## Recuperación y exclusión V4
 
 La [V4](v4/README.md) ensaya la conciliación de respuestas perdidas y una guardia compartida entre fases, con 37 pruebas nuevas y procesos independientes. Es exclusivamente de laboratorio y no cambia los ejecutores instalados.
+
+## Ejecutor integrado V5
+
+La [V5](v5/README.md) reúne calendario, contrato API, recuperación y guardia, añade cronología y exclusión de intervalos, y prepara TCP y el procedimiento de campo. Sigue exclusivamente en simulación, sin instalar en CU01.

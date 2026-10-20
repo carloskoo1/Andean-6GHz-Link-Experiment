@@ -1,0 +1,49 @@
+test_ack_does_not_resume_schedule (test_executor.UnifiedTests.test_ack_does_not_resume_schedule) ... ok
+test_analysis_start_inclusive (test_executor.UnifiedTests.test_analysis_start_inclusive) ... ok
+test_arbitrary_opener_disabled (test_executor.UnifiedTests.test_arbitrary_opener_disabled) ... ok
+test_calendar49_including_reserve_and_noop (test_executor.UnifiedTests.test_calendar49_including_reserve_and_noop) ... ok
+test_cannot_self_approve_tcp (test_executor.UnifiedTests.test_cannot_self_approve_tcp) ... ok
+test_changed_contract_blocks_before_recovery (test_executor.UnifiedTests.test_changed_contract_blocks_before_recovery) ... ok
+test_clock_mismatch (test_executor.UnifiedTests.test_clock_mismatch) ... ok
+test_configuration_id_read_and_updated (test_executor.UnifiedTests.test_configuration_id_read_and_updated) ... ok
+test_confirm_lost_after_acceptance_restores (test_executor.UnifiedTests.test_confirm_lost_after_acceptance_restores) ... ok
+test_confirm_lost_before_acceptance (test_executor.UnifiedTests.test_confirm_lost_before_acceptance) ... ok
+test_duplicate_no_api_calls (test_executor.UnifiedTests.test_duplicate_no_api_calls) ... ok
+test_failure_after_confirmation_never_marks_eligible (test_executor.UnifiedTests.test_failure_after_confirmation_never_marks_eligible) ... ok
+test_history_not_discarded_by_later_failure (test_executor.UnifiedTests.test_history_not_discarded_by_later_failure) ... ok
+test_incident_window_excluded_after_recovery (test_executor.UnifiedTests.test_incident_window_excluded_after_recovery) ... ok
+test_invalid_interval (test_executor.UnifiedTests.test_invalid_interval) ... ok
+test_late_slot (test_executor.UnifiedTests.test_late_slot) ... ok
+test_live_disabled (test_executor.UnifiedTests.test_live_disabled) ... ok
+test_malformed_getparam_blocks_without_write (test_executor.UnifiedTests.test_malformed_getparam_blocks_without_write) ... ok
+test_measurement_crosses_end_excluded (test_executor.UnifiedTests.test_measurement_crosses_end_excluded) ... ok
+test_measurement_end_exact_boundary (test_executor.UnifiedTests.test_measurement_end_exact_boundary) ... ok
+test_naive_time (test_executor.UnifiedTests.test_naive_time) ... ok
+test_no_window (test_executor.UnifiedTests.test_no_window) ... ok
+test_original_role_excludes_prospective (test_executor.UnifiedTests.test_original_role_excludes_prospective) ... ok
+test_qc_not_presumed (test_executor.UnifiedTests.test_qc_not_presumed) ... ok
+test_real_api_contract_and_effective_times (test_executor.UnifiedTests.test_real_api_contract_and_effective_times) ... ok
+test_rehearsal_full_flow (test_executor.UnifiedTests.test_rehearsal_full_flow) ... ok
+test_restart_pending_recovers (test_executor.UnifiedTests.test_restart_pending_recovers) ... ok
+test_restart_preserves_window (test_executor.UnifiedTests.test_restart_preserves_window) ... ok
+test_restore_ack_loss_reconciled (test_executor.UnifiedTests.test_restore_ack_loss_reconciled) ... ok
+test_rf_not_presumed (test_executor.UnifiedTests.test_rf_not_presumed) ... ok
+test_settle_does_not_fit_window (test_executor.UnifiedTests.test_settle_does_not_fit_window) ... ok
+test_shared_lock_used_by_tick (test_executor.UnifiedTests.test_shared_lock_used_by_tick) ... ok
+test_skipped_slot (test_executor.UnifiedTests.test_skipped_slot) ... ok
+test_tcp_cadence_not_self_frozen (test_executor.UnifiedTests.test_tcp_cadence_not_self_frozen) ... ok
+test_tcp_change_after_construction (test_executor.UnifiedTests.test_tcp_change_after_construction) ... ok
+test_tcp_invalid_omit (test_executor.UnifiedTests.test_tcp_invalid_omit) ... ok
+test_tcp_profile_label_must_match (test_executor.UnifiedTests.test_tcp_profile_label_must_match) ... ok
+test_tcp_stays_disabled (test_executor.UnifiedTests.test_tcp_stays_disabled) ... ok
+test_transition_exclusion (test_executor.UnifiedTests.test_transition_exclusion) ... ok
+test_trial_lost_after_acceptance (test_executor.UnifiedTests.test_trial_lost_after_acceptance) ... ok
+test_trial_lost_before_acceptance (test_executor.UnifiedTests.test_trial_lost_before_acceptance) ... ok
+test_unknown_rf_no_recovery_write (test_executor.UnifiedTests.test_unknown_rf_no_recovery_write) ... ok
+test_untrusted_recovery_time (test_executor.UnifiedTests.test_untrusted_recovery_time) ... ok
+test_wrong_rf_excluded (test_executor.UnifiedTests.test_wrong_rf_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 1.395s
+
+OK

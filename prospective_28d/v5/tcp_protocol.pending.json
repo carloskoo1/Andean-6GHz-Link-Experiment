@@ -1,0 +1,18 @@
+{
+  "version": "1-PENDING",
+  "status": "PENDING_EXPERT_REVIEW",
+  "active_profile_id": null,
+  "protocol": "TCP",
+  "directions": ["DL", "UL"],
+  "execution_mode": "sequential",
+  "interval_minutes": null,
+  "minute_offset": null,
+  "route_verified": false,
+  "clock_verified": false,
+  "profiles_for_comparison": {
+    "tcp_8s_omit1": {"duration_seconds": 8, "omit_seconds": 1, "parallel_streams": 1},
+    "tcp_15s_omit2": {"duration_seconds": 15, "omit_seconds": 2, "parallel_streams": 1}
+  },
+  "freeze_requirements": ["comparability_trial", "route_and_direction_mapping", "cadence_and_load", "iperf_version_and_congestion_control", "analysis_rule", "expert_approval"],
+  "measurement_execution_enabled": false
+}

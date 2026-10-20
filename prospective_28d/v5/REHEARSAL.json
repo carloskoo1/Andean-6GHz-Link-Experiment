@@ -1,0 +1,1264 @@
+{
+  "mode": "LAB_ONLY",
+  "live_enabled": false,
+  "cu01_contacted": false,
+  "real_rf_changes": 0,
+  "tcp_executions": 0,
+  "tcp_status": "PENDING_EXPERT_REVIEW",
+  "active_profile_id": null,
+  "slots": 49,
+  "treatments": 42,
+  "reserves": 7,
+  "timeline": [
+    {
+      "sequence": 1,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-01T00:00:00-05:00",
+      "scheduled_end": "2026-11-01T12:00:00-05:00",
+      "requested_at": "2026-11-01T05:00:00+00:00",
+      "trial_requested_at": "2026-11-01T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-01T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-01T05:00:13+00:00",
+      "verified_at": "2026-11-01T05:00:16+00:00",
+      "analysis_start": "2026-11-01T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 2,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-01T12:00:00-05:00",
+      "scheduled_end": "2026-11-02T00:00:00-05:00",
+      "requested_at": "2026-11-01T17:00:00+00:00",
+      "trial_requested_at": "2026-11-01T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-01T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-01T17:00:13+00:00",
+      "verified_at": "2026-11-01T17:00:16+00:00",
+      "analysis_start": "2026-11-01T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 3,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-02T00:00:00-05:00",
+      "scheduled_end": "2026-11-02T12:00:00-05:00",
+      "requested_at": "2026-11-02T05:00:00+00:00",
+      "trial_requested_at": "2026-11-02T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-02T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-02T05:00:13+00:00",
+      "verified_at": "2026-11-02T05:00:16+00:00",
+      "analysis_start": "2026-11-02T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 4,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-02T12:00:00-05:00",
+      "scheduled_end": "2026-11-03T00:00:00-05:00",
+      "requested_at": "2026-11-02T17:00:00+00:00",
+      "trial_requested_at": "2026-11-02T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-02T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-02T17:00:13+00:00",
+      "verified_at": "2026-11-02T17:00:16+00:00",
+      "analysis_start": "2026-11-02T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 5,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-03T00:00:00-05:00",
+      "scheduled_end": "2026-11-03T12:00:00-05:00",
+      "requested_at": "2026-11-03T05:00:00+00:00",
+      "trial_requested_at": "2026-11-03T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-03T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-03T05:00:13+00:00",
+      "verified_at": "2026-11-03T05:00:16+00:00",
+      "analysis_start": "2026-11-03T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 6,
+      "cycle": 1,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-03T12:00:00-05:00",
+      "scheduled_end": "2026-11-04T00:00:00-05:00",
+      "requested_at": "2026-11-03T17:00:00+00:00",
+      "trial_requested_at": "2026-11-03T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-03T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-03T17:00:13+00:00",
+      "verified_at": "2026-11-03T17:00:16+00:00",
+      "analysis_start": "2026-11-03T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 7,
+      "cycle": 1,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-04T00:00:00-05:00",
+      "scheduled_end": "2026-11-05T00:00:00-05:00",
+      "requested_at": "2026-11-04T05:00:00+00:00",
+      "trial_requested_at": null,
+      "confirm_requested_at": null,
+      "confirm_ack_at": null,
+      "verified_at": "2026-11-04T05:00:03+00:00",
+      "analysis_start": "2026-11-04T05:05:03+00:00",
+      "status": "LAB_NO_CHANGE",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 8,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-05T00:00:00-05:00",
+      "scheduled_end": "2026-11-05T12:00:00-05:00",
+      "requested_at": "2026-11-05T05:00:00+00:00",
+      "trial_requested_at": "2026-11-05T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-05T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-05T05:00:13+00:00",
+      "verified_at": "2026-11-05T05:00:16+00:00",
+      "analysis_start": "2026-11-05T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 9,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-05T12:00:00-05:00",
+      "scheduled_end": "2026-11-06T00:00:00-05:00",
+      "requested_at": "2026-11-05T17:00:00+00:00",
+      "trial_requested_at": "2026-11-05T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-05T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-05T17:00:13+00:00",
+      "verified_at": "2026-11-05T17:00:16+00:00",
+      "analysis_start": "2026-11-05T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 10,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-06T00:00:00-05:00",
+      "scheduled_end": "2026-11-06T12:00:00-05:00",
+      "requested_at": "2026-11-06T05:00:00+00:00",
+      "trial_requested_at": "2026-11-06T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-06T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-06T05:00:13+00:00",
+      "verified_at": "2026-11-06T05:00:16+00:00",
+      "analysis_start": "2026-11-06T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 11,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-06T12:00:00-05:00",
+      "scheduled_end": "2026-11-07T00:00:00-05:00",
+      "requested_at": "2026-11-06T17:00:00+00:00",
+      "trial_requested_at": "2026-11-06T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-06T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-06T17:00:13+00:00",
+      "verified_at": "2026-11-06T17:00:16+00:00",
+      "analysis_start": "2026-11-06T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 12,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-07T00:00:00-05:00",
+      "scheduled_end": "2026-11-07T12:00:00-05:00",
+      "requested_at": "2026-11-07T05:00:00+00:00",
+      "trial_requested_at": "2026-11-07T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-07T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-07T05:00:13+00:00",
+      "verified_at": "2026-11-07T05:00:16+00:00",
+      "analysis_start": "2026-11-07T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 13,
+      "cycle": 2,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-07T12:00:00-05:00",
+      "scheduled_end": "2026-11-08T00:00:00-05:00",
+      "requested_at": "2026-11-07T17:00:00+00:00",
+      "trial_requested_at": "2026-11-07T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-07T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-07T17:00:13+00:00",
+      "verified_at": "2026-11-07T17:00:16+00:00",
+      "analysis_start": "2026-11-07T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 14,
+      "cycle": 2,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-08T00:00:00-05:00",
+      "scheduled_end": "2026-11-09T00:00:00-05:00",
+      "requested_at": "2026-11-08T05:00:00+00:00",
+      "trial_requested_at": "2026-11-08T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-08T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-08T05:00:13+00:00",
+      "verified_at": "2026-11-08T05:00:16+00:00",
+      "analysis_start": "2026-11-08T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 15,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-09T00:00:00-05:00",
+      "scheduled_end": "2026-11-09T12:00:00-05:00",
+      "requested_at": "2026-11-09T05:00:00+00:00",
+      "trial_requested_at": "2026-11-09T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-09T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-09T05:00:13+00:00",
+      "verified_at": "2026-11-09T05:00:16+00:00",
+      "analysis_start": "2026-11-09T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 16,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-09T12:00:00-05:00",
+      "scheduled_end": "2026-11-10T00:00:00-05:00",
+      "requested_at": "2026-11-09T17:00:00+00:00",
+      "trial_requested_at": "2026-11-09T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-09T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-09T17:00:13+00:00",
+      "verified_at": "2026-11-09T17:00:16+00:00",
+      "analysis_start": "2026-11-09T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 17,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-10T00:00:00-05:00",
+      "scheduled_end": "2026-11-10T12:00:00-05:00",
+      "requested_at": "2026-11-10T05:00:00+00:00",
+      "trial_requested_at": "2026-11-10T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-10T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-10T05:00:13+00:00",
+      "verified_at": "2026-11-10T05:00:16+00:00",
+      "analysis_start": "2026-11-10T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 18,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-10T12:00:00-05:00",
+      "scheduled_end": "2026-11-11T00:00:00-05:00",
+      "requested_at": "2026-11-10T17:00:00+00:00",
+      "trial_requested_at": "2026-11-10T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-10T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-10T17:00:13+00:00",
+      "verified_at": "2026-11-10T17:00:16+00:00",
+      "analysis_start": "2026-11-10T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 19,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-11T00:00:00-05:00",
+      "scheduled_end": "2026-11-11T12:00:00-05:00",
+      "requested_at": "2026-11-11T05:00:00+00:00",
+      "trial_requested_at": "2026-11-11T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-11T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-11T05:00:13+00:00",
+      "verified_at": "2026-11-11T05:00:16+00:00",
+      "analysis_start": "2026-11-11T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 20,
+      "cycle": 3,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-11T12:00:00-05:00",
+      "scheduled_end": "2026-11-12T00:00:00-05:00",
+      "requested_at": "2026-11-11T17:00:00+00:00",
+      "trial_requested_at": "2026-11-11T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-11T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-11T17:00:13+00:00",
+      "verified_at": "2026-11-11T17:00:16+00:00",
+      "analysis_start": "2026-11-11T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 21,
+      "cycle": 3,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-12T00:00:00-05:00",
+      "scheduled_end": "2026-11-13T00:00:00-05:00",
+      "requested_at": "2026-11-12T05:00:00+00:00",
+      "trial_requested_at": "2026-11-12T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-12T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-12T05:00:13+00:00",
+      "verified_at": "2026-11-12T05:00:16+00:00",
+      "analysis_start": "2026-11-12T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 22,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-13T00:00:00-05:00",
+      "scheduled_end": "2026-11-13T12:00:00-05:00",
+      "requested_at": "2026-11-13T05:00:00+00:00",
+      "trial_requested_at": "2026-11-13T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-13T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-13T05:00:13+00:00",
+      "verified_at": "2026-11-13T05:00:16+00:00",
+      "analysis_start": "2026-11-13T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 23,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-13T12:00:00-05:00",
+      "scheduled_end": "2026-11-14T00:00:00-05:00",
+      "requested_at": "2026-11-13T17:00:00+00:00",
+      "trial_requested_at": "2026-11-13T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-13T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-13T17:00:13+00:00",
+      "verified_at": "2026-11-13T17:00:16+00:00",
+      "analysis_start": "2026-11-13T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 24,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-14T00:00:00-05:00",
+      "scheduled_end": "2026-11-14T12:00:00-05:00",
+      "requested_at": "2026-11-14T05:00:00+00:00",
+      "trial_requested_at": "2026-11-14T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-14T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-14T05:00:13+00:00",
+      "verified_at": "2026-11-14T05:00:16+00:00",
+      "analysis_start": "2026-11-14T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 25,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-14T12:00:00-05:00",
+      "scheduled_end": "2026-11-15T00:00:00-05:00",
+      "requested_at": "2026-11-14T17:00:00+00:00",
+      "trial_requested_at": "2026-11-14T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-14T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-14T17:00:13+00:00",
+      "verified_at": "2026-11-14T17:00:16+00:00",
+      "analysis_start": "2026-11-14T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 26,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-15T00:00:00-05:00",
+      "scheduled_end": "2026-11-15T12:00:00-05:00",
+      "requested_at": "2026-11-15T05:00:00+00:00",
+      "trial_requested_at": "2026-11-15T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-15T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-15T05:00:13+00:00",
+      "verified_at": "2026-11-15T05:00:16+00:00",
+      "analysis_start": "2026-11-15T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 27,
+      "cycle": 4,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-15T12:00:00-05:00",
+      "scheduled_end": "2026-11-16T00:00:00-05:00",
+      "requested_at": "2026-11-15T17:00:00+00:00",
+      "trial_requested_at": "2026-11-15T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-15T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-15T17:00:13+00:00",
+      "verified_at": "2026-11-15T17:00:16+00:00",
+      "analysis_start": "2026-11-15T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 28,
+      "cycle": 4,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-16T00:00:00-05:00",
+      "scheduled_end": "2026-11-17T00:00:00-05:00",
+      "requested_at": "2026-11-16T05:00:00+00:00",
+      "trial_requested_at": "2026-11-16T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-16T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-16T05:00:13+00:00",
+      "verified_at": "2026-11-16T05:00:16+00:00",
+      "analysis_start": "2026-11-16T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 29,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-17T00:00:00-05:00",
+      "scheduled_end": "2026-11-17T12:00:00-05:00",
+      "requested_at": "2026-11-17T05:00:00+00:00",
+      "trial_requested_at": "2026-11-17T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-17T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-17T05:00:13+00:00",
+      "verified_at": "2026-11-17T05:00:16+00:00",
+      "analysis_start": "2026-11-17T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 30,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-17T12:00:00-05:00",
+      "scheduled_end": "2026-11-18T00:00:00-05:00",
+      "requested_at": "2026-11-17T17:00:00+00:00",
+      "trial_requested_at": "2026-11-17T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-17T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-17T17:00:13+00:00",
+      "verified_at": "2026-11-17T17:00:16+00:00",
+      "analysis_start": "2026-11-17T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 31,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-18T00:00:00-05:00",
+      "scheduled_end": "2026-11-18T12:00:00-05:00",
+      "requested_at": "2026-11-18T05:00:00+00:00",
+      "trial_requested_at": "2026-11-18T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-18T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-18T05:00:13+00:00",
+      "verified_at": "2026-11-18T05:00:16+00:00",
+      "analysis_start": "2026-11-18T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 32,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-18T12:00:00-05:00",
+      "scheduled_end": "2026-11-19T00:00:00-05:00",
+      "requested_at": "2026-11-18T17:00:00+00:00",
+      "trial_requested_at": "2026-11-18T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-18T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-18T17:00:13+00:00",
+      "verified_at": "2026-11-18T17:00:16+00:00",
+      "analysis_start": "2026-11-18T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 33,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-19T00:00:00-05:00",
+      "scheduled_end": "2026-11-19T12:00:00-05:00",
+      "requested_at": "2026-11-19T05:00:00+00:00",
+      "trial_requested_at": "2026-11-19T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-19T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-19T05:00:13+00:00",
+      "verified_at": "2026-11-19T05:00:16+00:00",
+      "analysis_start": "2026-11-19T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 34,
+      "cycle": 5,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-19T12:00:00-05:00",
+      "scheduled_end": "2026-11-20T00:00:00-05:00",
+      "requested_at": "2026-11-19T17:00:00+00:00",
+      "trial_requested_at": "2026-11-19T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-19T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-19T17:00:13+00:00",
+      "verified_at": "2026-11-19T17:00:16+00:00",
+      "analysis_start": "2026-11-19T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 35,
+      "cycle": 5,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-20T00:00:00-05:00",
+      "scheduled_end": "2026-11-21T00:00:00-05:00",
+      "requested_at": "2026-11-20T05:00:00+00:00",
+      "trial_requested_at": "2026-11-20T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-20T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-20T05:00:13+00:00",
+      "verified_at": "2026-11-20T05:00:16+00:00",
+      "analysis_start": "2026-11-20T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 36,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-21T00:00:00-05:00",
+      "scheduled_end": "2026-11-21T12:00:00-05:00",
+      "requested_at": "2026-11-21T05:00:00+00:00",
+      "trial_requested_at": null,
+      "confirm_requested_at": null,
+      "confirm_ack_at": null,
+      "verified_at": "2026-11-21T05:00:03+00:00",
+      "analysis_start": "2026-11-21T05:05:03+00:00",
+      "status": "LAB_NO_CHANGE",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 37,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-21T12:00:00-05:00",
+      "scheduled_end": "2026-11-22T00:00:00-05:00",
+      "requested_at": "2026-11-21T17:00:00+00:00",
+      "trial_requested_at": "2026-11-21T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-21T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-21T17:00:13+00:00",
+      "verified_at": "2026-11-21T17:00:16+00:00",
+      "analysis_start": "2026-11-21T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 38,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-22T00:00:00-05:00",
+      "scheduled_end": "2026-11-22T12:00:00-05:00",
+      "requested_at": "2026-11-22T05:00:00+00:00",
+      "trial_requested_at": "2026-11-22T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-22T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-22T05:00:13+00:00",
+      "verified_at": "2026-11-22T05:00:16+00:00",
+      "analysis_start": "2026-11-22T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 39,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-22T12:00:00-05:00",
+      "scheduled_end": "2026-11-23T00:00:00-05:00",
+      "requested_at": "2026-11-22T17:00:00+00:00",
+      "trial_requested_at": "2026-11-22T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-22T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-22T17:00:13+00:00",
+      "verified_at": "2026-11-22T17:00:16+00:00",
+      "analysis_start": "2026-11-22T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 40,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-23T00:00:00-05:00",
+      "scheduled_end": "2026-11-23T12:00:00-05:00",
+      "requested_at": "2026-11-23T05:00:00+00:00",
+      "trial_requested_at": "2026-11-23T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-23T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-23T05:00:13+00:00",
+      "verified_at": "2026-11-23T05:00:16+00:00",
+      "analysis_start": "2026-11-23T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 41,
+      "cycle": 6,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-23T12:00:00-05:00",
+      "scheduled_end": "2026-11-24T00:00:00-05:00",
+      "requested_at": "2026-11-23T17:00:00+00:00",
+      "trial_requested_at": "2026-11-23T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-23T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-23T17:00:13+00:00",
+      "verified_at": "2026-11-23T17:00:16+00:00",
+      "analysis_start": "2026-11-23T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 42,
+      "cycle": 6,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-24T00:00:00-05:00",
+      "scheduled_end": "2026-11-25T00:00:00-05:00",
+      "requested_at": "2026-11-24T05:00:00+00:00",
+      "trial_requested_at": "2026-11-24T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-24T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-24T05:00:13+00:00",
+      "verified_at": "2026-11-24T05:00:16+00:00",
+      "analysis_start": "2026-11-24T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 43,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B20",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-25T00:00:00-05:00",
+      "scheduled_end": "2026-11-25T12:00:00-05:00",
+      "requested_at": "2026-11-25T05:00:00+00:00",
+      "trial_requested_at": null,
+      "confirm_requested_at": null,
+      "confirm_ack_at": null,
+      "verified_at": "2026-11-25T05:00:03+00:00",
+      "analysis_start": "2026-11-25T05:05:03+00:00",
+      "status": "LAB_NO_CHANGE",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 44,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B20",
+      "target": [
+        6655,
+        20
+      ],
+      "scheduled_start": "2026-11-25T12:00:00-05:00",
+      "scheduled_end": "2026-11-26T00:00:00-05:00",
+      "requested_at": "2026-11-25T17:00:00+00:00",
+      "trial_requested_at": "2026-11-25T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-25T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-25T17:00:13+00:00",
+      "verified_at": "2026-11-25T17:00:16+00:00",
+      "analysis_start": "2026-11-25T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 45,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B20",
+      "target": [
+        6475,
+        20
+      ],
+      "scheduled_start": "2026-11-26T00:00:00-05:00",
+      "scheduled_end": "2026-11-26T12:00:00-05:00",
+      "requested_at": "2026-11-26T05:00:00+00:00",
+      "trial_requested_at": "2026-11-26T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-26T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-26T05:00:13+00:00",
+      "verified_at": "2026-11-26T05:00:16+00:00",
+      "analysis_start": "2026-11-26T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 46,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F6655_B40",
+      "target": [
+        6655,
+        40
+      ],
+      "scheduled_start": "2026-11-26T12:00:00-05:00",
+      "scheduled_end": "2026-11-27T00:00:00-05:00",
+      "requested_at": "2026-11-26T17:00:00+00:00",
+      "trial_requested_at": "2026-11-26T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-26T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-26T17:00:13+00:00",
+      "verified_at": "2026-11-26T17:00:16+00:00",
+      "analysis_start": "2026-11-26T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 47,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F6475_B40",
+      "target": [
+        6475,
+        40
+      ],
+      "scheduled_start": "2026-11-27T00:00:00-05:00",
+      "scheduled_end": "2026-11-27T12:00:00-05:00",
+      "requested_at": "2026-11-27T05:00:00+00:00",
+      "trial_requested_at": "2026-11-27T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-27T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-27T05:00:13+00:00",
+      "verified_at": "2026-11-27T05:00:16+00:00",
+      "analysis_start": "2026-11-27T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 48,
+      "cycle": 7,
+      "phase": "TREATMENT",
+      "scenario_id": "F7000_B40",
+      "target": [
+        7000,
+        40
+      ],
+      "scheduled_start": "2026-11-27T12:00:00-05:00",
+      "scheduled_end": "2026-11-28T00:00:00-05:00",
+      "requested_at": "2026-11-27T17:00:00+00:00",
+      "trial_requested_at": "2026-11-27T17:00:03+00:00",
+      "confirm_requested_at": "2026-11-27T17:00:11+00:00",
+      "confirm_ack_at": "2026-11-27T17:00:13+00:00",
+      "verified_at": "2026-11-27T17:00:16+00:00",
+      "analysis_start": "2026-11-27T17:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    },
+    {
+      "sequence": 49,
+      "cycle": 7,
+      "phase": "RESERVE",
+      "scenario_id": "REFERENCE_7000_20_RESERVE",
+      "target": [
+        7000,
+        20
+      ],
+      "scheduled_start": "2026-11-28T00:00:00-05:00",
+      "scheduled_end": "2026-11-29T00:00:00-05:00",
+      "requested_at": "2026-11-28T05:00:00+00:00",
+      "trial_requested_at": "2026-11-28T05:00:03+00:00",
+      "confirm_requested_at": "2026-11-28T05:00:11+00:00",
+      "confirm_ack_at": "2026-11-28T05:00:13+00:00",
+      "verified_at": "2026-11-28T05:00:16+00:00",
+      "analysis_start": "2026-11-28T05:05:16+00:00",
+      "status": "LAB_COMMITTED",
+      "study_eligible": false,
+      "mode": "LAB_ONLY"
+    }
+  ],
+  "classification_examples": [
+    {
+      "case": "during_transition",
+      "start": "2026-11-01T00:00:00-05:00",
+      "end": "2026-11-01T00:00:01-05:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "TRANSITION_OR_SETTLING"
+    },
+    {
+      "case": "settling",
+      "start": "2026-11-01T05:00:16+00:00",
+      "end": "2026-11-01T05:00:17+00:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "TRANSITION_OR_SETTLING"
+    },
+    {
+      "case": "qc_pending",
+      "start": "2026-11-01T05:05:16+00:00",
+      "end": "2026-11-01T05:05:36+00:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "QC_PENDING"
+    },
+    {
+      "case": "rf_unknown",
+      "start": "2026-11-01T05:05:16+00:00",
+      "end": "2026-11-01T05:05:36+00:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "RF_NOT_CONFIRMED"
+    },
+    {
+      "case": "valid_lab_only",
+      "start": "2026-11-01T05:05:16+00:00",
+      "end": "2026-11-01T05:05:36+00:00",
+      "temporal_eligible": true,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "LAB_ONLY_PROTOCOL_PENDING",
+      "tcp_execution_enabled": false
+    },
+    {
+      "case": "crosses_end",
+      "start": "2026-11-01T11:59:55-05:00",
+      "end": "2026-11-01T12:00:05-05:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 1,
+      "reason": "CROSSES_WINDOW_END"
+    },
+    {
+      "case": "reserve",
+      "start": "2026-11-04T05:05:03+00:00",
+      "end": "2026-11-04T05:05:23+00:00",
+      "temporal_eligible": false,
+      "study_eligible": false,
+      "mode": "LAB_ONLY",
+      "sequence": 7,
+      "reason": "RESERVE"
+    }
+  ],
+  "incident_recovery_examples": [
+    {
+      "fault": "trial_before",
+      "recovery": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "window": {
+        "sequence": 1,
+        "cycle": 1,
+        "phase": "TREATMENT",
+        "scenario_id": "F7000_B40",
+        "target": [
+          7000,
+          40
+        ],
+        "scheduled_start": "2026-11-01T00:00:00-05:00",
+        "scheduled_end": "2026-11-01T12:00:00-05:00",
+        "requested_at": "2026-11-01T05:00:00+00:00",
+        "trial_requested_at": "2026-11-01T05:00:03+00:00",
+        "confirm_requested_at": null,
+        "confirm_ack_at": null,
+        "verified_at": null,
+        "analysis_start": null,
+        "status": "INCIDENT",
+        "study_eligible": false,
+        "mode": "LAB_ONLY",
+        "error_type": "Uncertain",
+        "incident_at": "2026-11-01T05:00:08+00:00"
+      },
+      "calendar_halted": true,
+      "review_required": true,
+      "final_simulated_rf": [
+        7000,
+        20
+      ]
+    },
+    {
+      "fault": "trial_after",
+      "recovery": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "window": {
+        "sequence": 1,
+        "cycle": 1,
+        "phase": "TREATMENT",
+        "scenario_id": "F7000_B40",
+        "target": [
+          7000,
+          40
+        ],
+        "scheduled_start": "2026-11-01T00:00:00-05:00",
+        "scheduled_end": "2026-11-01T12:00:00-05:00",
+        "requested_at": "2026-11-01T05:00:00+00:00",
+        "trial_requested_at": "2026-11-01T05:00:03+00:00",
+        "confirm_requested_at": null,
+        "confirm_ack_at": null,
+        "verified_at": null,
+        "analysis_start": null,
+        "status": "INCIDENT",
+        "study_eligible": false,
+        "mode": "LAB_ONLY",
+        "error_type": "Uncertain",
+        "incident_at": "2026-11-01T05:00:08+00:00"
+      },
+      "calendar_halted": true,
+      "review_required": true,
+      "final_simulated_rf": [
+        7000,
+        20
+      ]
+    },
+    {
+      "fault": "confirm_before",
+      "recovery": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "window": {
+        "sequence": 1,
+        "cycle": 1,
+        "phase": "TREATMENT",
+        "scenario_id": "F7000_B40",
+        "target": [
+          7000,
+          40
+        ],
+        "scheduled_start": "2026-11-01T00:00:00-05:00",
+        "scheduled_end": "2026-11-01T12:00:00-05:00",
+        "requested_at": "2026-11-01T05:00:00+00:00",
+        "trial_requested_at": "2026-11-01T05:00:03+00:00",
+        "confirm_requested_at": "2026-11-01T05:00:11+00:00",
+        "confirm_ack_at": null,
+        "verified_at": null,
+        "analysis_start": null,
+        "status": "INCIDENT",
+        "study_eligible": false,
+        "mode": "LAB_ONLY",
+        "error_type": "Uncertain",
+        "incident_at": "2026-11-01T05:00:13+00:00"
+      },
+      "calendar_halted": true,
+      "review_required": true,
+      "final_simulated_rf": [
+        7000,
+        20
+      ]
+    },
+    {
+      "fault": "confirm_after",
+      "recovery": [
+        "WAIT_NO_WRITES",
+        "RESTORE_PENDING_RECHECK",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "window": {
+        "sequence": 1,
+        "cycle": 1,
+        "phase": "TREATMENT",
+        "scenario_id": "F7000_B40",
+        "target": [
+          7000,
+          40
+        ],
+        "scheduled_start": "2026-11-01T00:00:00-05:00",
+        "scheduled_end": "2026-11-01T12:00:00-05:00",
+        "requested_at": "2026-11-01T05:00:00+00:00",
+        "trial_requested_at": "2026-11-01T05:00:03+00:00",
+        "confirm_requested_at": "2026-11-01T05:00:11+00:00",
+        "confirm_ack_at": null,
+        "verified_at": null,
+        "analysis_start": null,
+        "status": "INCIDENT",
+        "study_eligible": false,
+        "mode": "LAB_ONLY",
+        "error_type": "Uncertain",
+        "incident_at": "2026-11-01T05:00:13+00:00"
+      },
+      "calendar_halted": true,
+      "review_required": true,
+      "final_simulated_rf": [
+        7000,
+        20
+      ]
+    }
+  ],
+  "handover_evidence": "FICTITIOUS_FOR_TESTS_ONLY_NOT_EXPERT_APPROVAL"
+}
