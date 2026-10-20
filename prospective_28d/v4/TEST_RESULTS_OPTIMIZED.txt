@@ -1,0 +1,42 @@
+test_cannot_ack_pending (test_safety.SafetyTests.test_cannot_ack_pending) ... ok
+test_clock_rollback (test_safety.SafetyTests.test_clock_rollback) ... ok
+test_confirm_accepted_ack_lost_restores_once (test_safety.SafetyTests.test_confirm_accepted_ack_lost_restores_once) ... ok
+test_confirm_not_accepted_autoexpires (test_safety.SafetyTests.test_confirm_not_accepted_autoexpires) ... ok
+test_corrupt_journal_fails_closed (test_safety.SafetyTests.test_corrupt_journal_fails_closed) ... ok
+test_delayed_trial_does_not_confirm_without_margin (test_safety.SafetyTests.test_delayed_trial_does_not_confirm_without_margin) ... ok
+test_duplicate (test_safety.SafetyTests.test_duplicate) ... ok
+test_failed_schedule_stays_halted_after_recovery_ack (test_safety.SafetyTests.test_failed_schedule_stays_halted_after_recovery_ack) ... ok
+test_full_calendar_shared_guard (test_safety.SafetyTests.test_full_calendar_shared_guard) ... ok
+test_handover_pending_rejected (test_safety.SafetyTests.test_handover_pending_rejected) ... ok
+test_handover_requires_all_evidence (test_safety.SafetyTests.test_handover_requires_all_evidence) ... ok
+test_id_reuse_rejected (test_safety.SafetyTests.test_id_reuse_rejected) ... ok
+test_invalid_initial_rf_no_write (test_safety.SafetyTests.test_invalid_initial_rf_no_write) ... ok
+test_killed_process_releases_lock_but_keeps_intent (test_safety.SafetyTests.test_killed_process_releases_lock_but_keeps_intent) ... ok
+test_live_rejected (test_safety.SafetyTests.test_live_rejected) ... ok
+test_no_change (test_safety.SafetyTests.test_no_change) ... ok
+test_normal_commit (test_safety.SafetyTests.test_normal_commit) ... ok
+test_original_owns_initially (test_safety.SafetyTests.test_original_owns_initially) ... ok
+test_original_wrapper_uses_existing_executor_fake_runner (test_safety.SafetyTests.test_original_wrapper_uses_existing_executor_fake_runner) ... ok
+test_owner_persists_new_guard (test_safety.SafetyTests.test_owner_persists_new_guard) ... ok
+test_readback_disagreement_no_initial_write (test_safety.SafetyTests.test_readback_disagreement_no_initial_write) ... ok
+test_recovery_requires_explicit_trusted_clock (test_safety.SafetyTests.test_recovery_requires_explicit_trusted_clock) ... ok
+test_restart_recovery_uses_durable_snapshot (test_safety.SafetyTests.test_restart_recovery_uses_durable_snapshot) ... ok
+test_restore_ack_lost_is_reconciled (test_safety.SafetyTests.test_restore_ack_lost_is_reconciled) ... ok
+test_restore_trial_ack_lost_does_not_loop (test_safety.SafetyTests.test_restore_trial_ack_lost_does_not_loop) ... ok
+test_review_required_after_recovery (test_safety.SafetyTests.test_review_required_after_recovery) ... ok
+test_schedule_clock_mismatch (test_safety.SafetyTests.test_schedule_clock_mismatch) ... ok
+test_schedule_missed_blocks (test_safety.SafetyTests.test_schedule_missed_blocks) ... ok
+test_trial_accepted_autoexpires_simulated (test_safety.SafetyTests.test_trial_accepted_autoexpires_simulated) ... ok
+test_trial_ack_loss_waits_without_cancel (test_safety.SafetyTests.test_trial_ack_loss_waits_without_cancel) ... ok
+test_trial_not_accepted_recovers_previous (test_safety.SafetyTests.test_trial_not_accepted_recovers_previous) ... ok
+test_two_processes_original_blocks_prospective (test_safety.SafetyTests.test_two_processes_original_blocks_prospective) ... ok
+test_two_processes_prospective_blocks_original (test_safety.SafetyTests.test_two_processes_prospective_blocks_original) ... ok
+test_unknown_rf_requires_manual_without_write (test_safety.SafetyTests.test_unknown_rf_requires_manual_without_write) ... ok
+test_unreachable_recovery (test_safety.SafetyTests.test_unreachable_recovery) ... ok
+test_untrusted_clock (test_safety.SafetyTests.test_untrusted_clock) ... ok
+test_wrong_incident_ack (test_safety.SafetyTests.test_wrong_incident_ack) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 1.665s
+
+OK

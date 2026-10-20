@@ -1,0 +1,38 @@
+{
+  "mode": "LAB_ONLY",
+  "date_peru": "2026-10-19",
+  "live_enabled": false,
+  "cu01_contacted": false,
+  "tests": {
+    "V4": {
+      "count": 37,
+      "passed": true
+    },
+    "V4_optimized": {
+      "count": 37,
+      "passed": true
+    },
+    "V2": {
+      "count": 35,
+      "passed": true
+    },
+    "V3": {
+      "count": 27,
+      "passed": true
+    },
+    "original": {
+      "count": 76,
+      "passed": true
+    }
+  },
+  "distinct_tests": 175,
+  "source_files_unchanged": {
+    "campaign_orchestrator.py": true,
+    "campaign_executor.py": true,
+    "campaign_plan.template.json": true,
+    "campaign_runtime/campaign_schedule.csv": true,
+    "andean-campaign.timer": true,
+    "andean-campaign.service": true
+  },
+  "scope": "recovery candidate and cooperating executors on one local shared guard; not deployed"
+}

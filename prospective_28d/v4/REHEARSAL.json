@@ -1,0 +1,128 @@
+{
+  "mode": "LAB_ONLY",
+  "live_enabled": false,
+  "real_rf_changes": 0,
+  "calendar": {
+    "slots": 49,
+    "treatments": 42,
+    "reserves": 7,
+    "committed": 46,
+    "no_change": 3,
+    "final_simulated_rf": [
+      7000,
+      20
+    ],
+    "study_eligible": false
+  },
+  "recovery_cases": [
+    {
+      "fault": "trial_before",
+      "outcomes": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "final_simulated_rf": [
+        7000,
+        20
+      ],
+      "review_required": true,
+      "pending": false,
+      "write_operations": [
+        [
+          "trial",
+          [
+            6475,
+            40
+          ]
+        ]
+      ]
+    },
+    {
+      "fault": "trial_after",
+      "outcomes": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "final_simulated_rf": [
+        7000,
+        20
+      ],
+      "review_required": true,
+      "pending": false,
+      "write_operations": [
+        [
+          "trial",
+          [
+            6475,
+            40
+          ]
+        ]
+      ]
+    },
+    {
+      "fault": "confirm_before",
+      "outcomes": [
+        "WAIT_NO_WRITES",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "final_simulated_rf": [
+        7000,
+        20
+      ],
+      "review_required": true,
+      "pending": false,
+      "write_operations": [
+        [
+          "trial",
+          [
+            6475,
+            40
+          ]
+        ],
+        [
+          "finish",
+          true
+        ]
+      ]
+    },
+    {
+      "fault": "confirm_after",
+      "outcomes": [
+        "WAIT_NO_WRITES",
+        "RESTORE_PENDING_RECHECK",
+        "RECOVERED_PREVIOUS_REVIEW_REQUIRED"
+      ],
+      "final_simulated_rf": [
+        7000,
+        20
+      ],
+      "review_required": true,
+      "pending": false,
+      "write_operations": [
+        [
+          "trial",
+          [
+            6475,
+            40
+          ]
+        ],
+        [
+          "finish",
+          true
+        ],
+        [
+          "trial",
+          [
+            7000,
+            20
+          ]
+        ],
+        [
+          "finish",
+          true
+        ]
+      ]
+    }
+  ],
+  "handover_evidence": "FICTITIOUS_FOR_TESTING_NOT_EXPERT_APPROVAL"
+}

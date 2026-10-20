@@ -13,3 +13,7 @@ Pruebas desde v2/: `python3 -m unittest discover -v`.
 ## Integración V3
 
 La [V3](v3/README.md) ensaya el adaptador con la implementación existente de trial/confirm y rollback, usando dispositivos ficticios: 27 pruebas adicionales. El modo real permanece deshabilitado.
+
+## Recuperación y exclusión V4
+
+La [V4](v4/README.md) ensaya la conciliación de respuestas perdidas y una guardia compartida entre fases, con 37 pruebas nuevas y procesos independientes. Es exclusivamente de laboratorio y no cambia los ejecutores instalados.
