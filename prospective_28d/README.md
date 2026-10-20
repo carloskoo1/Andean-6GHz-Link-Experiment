@@ -9,3 +9,7 @@ Preparación para revisión de expertos y desarrollo posterior del adaptador rea
 Ver [condiciones pendientes](../docs/validation_28d/README.md).
 
 Pruebas desde v2/: `python3 -m unittest discover -v`.
+
+## Integración V3
+
+La [V3](v3/README.md) ensaya el adaptador con la implementación existente de trial/confirm y rollback, usando dispositivos ficticios: 27 pruebas adicionales. El modo real permanece deshabilitado.

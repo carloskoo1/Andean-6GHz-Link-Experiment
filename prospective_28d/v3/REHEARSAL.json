@@ -1,0 +1,16 @@
+{
+  "mode": "LAB_REAL_ORCHESTRATOR_FAKE_RADIOS",
+  "transitions": 49,
+  "treatments": 42,
+  "reserves": 7,
+  "confirmed_trials": 49,
+  "final_ap_simulated": {
+    "centerFrequency": "7000",
+    "wirelessInterfaceHTMode": "1",
+    "centerFrequency2": "0"
+  },
+  "real_rf_changes": 0,
+  "live_enabled": false,
+  "sm_rf_verified": false,
+  "study_eligible": false
+}

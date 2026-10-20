@@ -1,0 +1,32 @@
+test_arbitrary_backend_rejected (test_adapter.AdapterTests.test_arbitrary_backend_rejected) ... ok
+test_cancel_failure_safe_abort (test_adapter.AdapterTests.test_cancel_failure_safe_abort) ... ok
+test_commit_readback (test_adapter.AdapterTests.test_commit_readback) ... ok
+test_config_changed_restart (test_adapter.AdapterTests.test_config_changed_restart) ... ok
+test_confirm_ack_lost_is_not_success (test_adapter.AdapterTests.test_confirm_ack_lost_is_not_success) ... ok
+test_crash_intent (test_adapter.AdapterTests.test_crash_intent) ... ok
+test_duplicate (test_adapter.AdapterTests.test_duplicate) ... ok
+test_end_exclusive (test_adapter.AdapterTests.test_end_exclusive) ... ok
+test_full49_no_network (test_adapter.AdapterTests.test_full49_no_network) ... ok
+test_invalid_original_config (test_adapter.AdapterTests.test_invalid_original_config) ... ok
+test_late (test_adapter.AdapterTests.test_late) ... ok
+test_live_disabled (test_adapter.AdapterTests.test_live_disabled) ... ok
+test_lock (test_adapter.AdapterTests.test_lock) ... ok
+test_mutation_after_construction (test_adapter.AdapterTests.test_mutation_after_construction) ... ok
+test_naive_clock (test_adapter.AdapterTests.test_naive_clock) ... ok
+test_post_commit_failure_rolls_back (test_adapter.AdapterTests.test_post_commit_failure_rolls_back) ... ok
+test_preflight_failure (test_adapter.AdapterTests.test_preflight_failure) ... ok
+test_read_failure (test_adapter.AdapterTests.test_read_failure) ... ok
+test_reassociation_failure_cancels (test_adapter.AdapterTests.test_reassociation_failure_cancels) ... ok
+test_restart (test_adapter.AdapterTests.test_restart) ... ok
+test_safe_abort (test_adapter.AdapterTests.test_safe_abort) ... ok
+test_secondary_frequency_preserved (test_adapter.AdapterTests.test_secondary_frequency_preserved) ... ok
+test_settle_overrun (test_adapter.AdapterTests.test_settle_overrun) ... ok
+test_skip (test_adapter.AdapterTests.test_skip) ... ok
+test_tampered_row (test_adapter.AdapterTests.test_tampered_row) ... ok
+test_trial_ack_lost_is_uncertain_and_blocked (test_adapter.AdapterTests.test_trial_ack_lost_is_uncertain_and_blocked) ... ok
+test_wrong_readback (test_adapter.AdapterTests.test_wrong_readback) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.409s
+
+OK

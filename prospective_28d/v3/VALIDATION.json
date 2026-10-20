@@ -1,0 +1,18 @@
+{
+  "validation_date_peru": "2026-10-19",
+  "v3_tests": 27,
+  "v3_optimized_tests": 27,
+  "v2_tests": 35,
+  "existing_tests": 76,
+  "total_distinct_test_cases": 138,
+  "live_enabled": false,
+  "cu01_contacted": false,
+  "source_files_sha256": {
+    "campaign_orchestrator.py": "f3aa7fd5cf8ebc507fc5074b58bfead11e97aea1851f2cf499d6d960c7195558",
+    "campaign_executor.py": "5c5718a6b32ef3cfe8a73bece0fa15db488792fdd1423499f68136596492141b",
+    "campaign_plan.template.json": "0ac5323e7a9107197fa9640d59f77bc492da4b363035b60455d1350fa32ec804",
+    "campaign_runtime/campaign_schedule.csv": "ba6cb4053afbe6241642e63cf26ed33e0d93ee768784aa88e493449205549780",
+    "andean-campaign.timer": "b99f4cb4dde670cceef90cbf3aa3e810dbb4bfc0d6a680076aba7bf85ca8f23e",
+    "andean-campaign.service": "f2b9cfba07e5adeae204f34293b26d8cbbb8929879c864bc348c3d2075704a54"
+  }
+}
