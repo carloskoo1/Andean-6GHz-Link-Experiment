@@ -1,0 +1,35 @@
+{
+  "campaign_id": "LUISITA_28D_PROSPECTIVA_DRAFT_20261101",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "mode": "PURE_OFFLINE_NO_RF",
+  "original_campaign_untouched": true,
+  "expected_start_local": "2026-11-01T00:00:00-05:00",
+  "expected_end_local": "2026-11-29T00:00:00-05:00",
+  "cycles": 7,
+  "total_calendar_hours": 672,
+  "treatment_slots": 42,
+  "treatment_hours": 504,
+  "reserve_slots": 7,
+  "reserve_hours": 168,
+  "counts_per_scenario": {
+    "F6475_B20": 7,
+    "F6475_B40": 7,
+    "F6655_B20": 7,
+    "F6655_B40": 7,
+    "F7000_B20": 7,
+    "F7000_B40": 7
+  },
+  "first_six_cycles_day_night_balanced": true,
+  "seventh_cycle_extra_daypart_imbalance_note": "La séptima observación por escenario añade un turno día o noche; controlar en el análisis.",
+  "study_eligibility_assessed": false,
+  "expert_approval": false,
+  "operator_authorization": false,
+  "rf_actuation_available": false,
+  "notes": [
+    "Horario provisional; congelar antes de la ejecución y documentar aceptación metodológica.",
+    "Las reservas de 24 h proponen referencia 7000/20; todavía NO existe módulo RF de aplicación de referencia.",
+    "No ejecutar esta fase durante la campaña original; cualquier paso a producción requiere aprobación independiente.",
+    "Mantener separados los datos de ambas fases y controlar el régimen de throughput TCP."
+  ],
+  "calendar_sha256": "74d86ab73d60533d9cbd724238a6192a3a9bbedd5c16ebbad06cfa81ad9959e9"
+}

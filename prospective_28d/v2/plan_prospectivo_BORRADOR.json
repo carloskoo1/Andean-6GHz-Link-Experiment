@@ -1,0 +1,40 @@
+{
+  "campaign_id": "LUISITA_28D_PROSPECTIVA_DRAFT_20261101",
+  "version": "0.1-DRAFT",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "study": "Validacion temporal prospectiva del factorial 3x2; tesis de Luisita Mendo Urbina",
+  "timezone": "America/Lima",
+  "proposed_start_local": "2026-11-01T00:00:00-05:00",
+  "cycle_count": 7,
+  "cycle_hours": 96,
+  "treatment_hours_per_cycle": 72,
+  "reserve_hours_per_cycle": 24,
+  "slot_hours": 12,
+  "frequency_levels_mhz": [6475, 6655, 7000],
+  "bandwidth_levels_mhz": [20, 40],
+  "permutation_seed": 20261019,
+  "reference_configuration": {"frequency_mhz": 7000, "bandwidth_mhz": 20},
+  "proposed_fixed_controls": {"ap_tx_power_dbm": 10, "sm_tx_power_dbm": 3, "ap_antenna_gain_dbi": 26, "sm_antenna_gain_dbi": 26},
+  "measurement_protocol": {
+    "status": "PENDING_EXPERT_REVIEW",
+    "protocol": "TCP",
+    "nominal_duration_seconds": 8,
+    "omit_seconds": 1,
+    "parallel_streams": 1,
+    "directions": ["DL", "UL"],
+    "caution": "Los 8s/1s se observan en un subconjunto previo, pero no son aun parametros congelados y validados para toda la segunda fase. Requieren ensayo de comparabilidad y dictamen."
+  },
+  "preconditions": {
+    "original_phase_closed_and_audited": false,
+    "original_executor_disabled_after_closure": false,
+    "verified_reference_7000_20": false,
+    "verified_48h_stability": false,
+    "in_situ_rf_inspection_expert_1": false,
+    "automated_executor_tests_expert_2": false,
+    "statistical_protocol_approved_expert_3": false,
+    "clock_and_path_equivalence_verified": false,
+    "backup_and_restore_verified": false,
+    "study_addendum_approved": false,
+    "explicit_operator_authorization": false
+  }
+}
