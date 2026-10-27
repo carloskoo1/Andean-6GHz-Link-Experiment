@@ -1,0 +1,25 @@
+{
+  "validation_date": "2026-10-27",
+  "checks": {
+    "segments": 18,
+    "homogeneous_segment_responses": 17,
+    "selected_DL_tests": 3419,
+    "S16_in_all_four_models": true,
+    "independent_nested_RSS": {
+      "global": {
+        "nested_RSS_F": 11.11584784403236,
+        "matches_contrast_test": true
+      },
+      "interaction": {
+        "nested_RSS_F": 0.8436214889031566,
+        "matches_contrast_test": true
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "limitations": "Model and selected-projection validation; not a full DB custody snapshot, preregistration, or field authorization."
+}
