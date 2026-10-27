@@ -1,0 +1,155 @@
+{
+  "as_of_utc": "2026-10-27T19:27:18.397855+00:00",
+  "cutoff_utc": "2026-10-26T19:27:18.397855+00:00",
+  "window_hours": 24,
+  "read_only": true,
+  "campaign_authorized": false,
+  "notes": [
+    "Presence and quality audit; does not prove measurement accuracy or field readiness.",
+    "Missing observations are not imputed as zeros."
+  ],
+  "tables": {
+    "radio_link_config_telemetry": {
+      "available": true,
+      "rows_in_window": 287,
+      "latest_utc": "2026-10-27T19:22:57+00:00",
+      "latest_age_seconds": 261.397855,
+      "statuses": {
+        "LINK_OPERATIONAL_DUAL": 287
+      },
+      "dual_config_match_rows": 287,
+      "invalid_rssi_rows": {
+        "dl_rssi_dbm": 0,
+        "ul_rssi_dbm": 0
+      },
+      "nonnull": {
+        "dl_rssi_dbm": 287,
+        "ul_rssi_dbm": 287,
+        "dl_snr_db": 287,
+        "ul_snr_db": 287,
+        "ap_tx_power_dbm": 287,
+        "sm_tx_power_dbm": 287,
+        "dashboard_raw_json": 287,
+        "sm_dashboard_raw_json": 287
+      },
+      "radio_clocks": {
+        "AP": {
+          "present": true,
+          "timezone_verified": false,
+          "raw_value": "10/28/2026:06:22:56",
+          "offset_seconds_if_raw_is_utc": 39599,
+          "use_as_analysis_time": false
+        },
+        "SM": {
+          "present": true,
+          "timezone_verified": false,
+          "raw_value": "10/27/2026:19:22:55",
+          "offset_seconds_if_raw_is_utc": -2,
+          "use_as_analysis_time": false
+        }
+      }
+    },
+    "active_throughput_6g": {
+      "available": true,
+      "rows_in_window": 190,
+      "latest_utc": "2026-10-27T19:15:19+00:00",
+      "latest_age_seconds": 719.397855,
+      "statuses": {
+        "OK": 190
+      },
+      "profiles": [
+        {
+          "protocol": "TCP",
+          "duration": 8,
+          "omit": 1,
+          "streams": 1,
+          "direction": "DL",
+          "count": 95
+        },
+        {
+          "protocol": "TCP",
+          "duration": 8,
+          "omit": 1,
+          "streams": 1,
+          "direction": "UL",
+          "count": 95
+        }
+      ],
+      "rf_pair_within_300s_rows": 190,
+      "route_verified_rows": 190
+    },
+    "station_observations": {
+      "available": true,
+      "rows_in_window": 2323,
+      "latest_utc": "2026-10-27T19:25:35+00:00",
+      "latest_age_seconds": 103.397855,
+      "stations": {
+        "CU01": {
+          "rows": 1380,
+          "nonnull": {
+            "temp_avg_C": 1380,
+            "hum_avg_pct": 1380,
+            "pres_avg_hPa": 1380,
+            "wind_speed_ms": 1380,
+            "wind_direction_deg": 1380,
+            "wind_gust_ms": 1380,
+            "rain_1min_mm": 1380,
+            "rain_1h_mm": 1380,
+            "rain_total_mm": 1380,
+            "pulses_total": 1380
+          },
+          "quality_flags": {
+            "bme_ok": {
+              "1": 1380
+            },
+            "wind_ok": {
+              "1": 1380
+            },
+            "rain_ok": {
+              "1": 1380
+            }
+          }
+        },
+        "SJ01": {
+          "rows": 943,
+          "nonnull": {
+            "temp_avg_C": 943,
+            "hum_avg_pct": 943,
+            "pres_avg_hPa": 943,
+            "wind_speed_ms": 943,
+            "wind_direction_deg": 943,
+            "wind_gust_ms": 943,
+            "rain_1min_mm": 943,
+            "rain_1h_mm": 943,
+            "rain_total_mm": 943,
+            "pulses_total": 943
+          },
+          "quality_flags": {
+            "bme_ok": {
+              "1": 943
+            },
+            "wind_ok": {
+              "1": 943
+            },
+            "rain_ok": {
+              "1": 943
+            }
+          }
+        }
+      }
+    },
+    "radio_link_local": {
+      "available": true,
+      "rows_in_window": 2858,
+      "latest_utc": "2026-10-27T19:26:48+00:00",
+      "latest_age_seconds": 30.397855,
+      "chains_nonnull": {
+        "rssi_c0p": 0,
+        "rssi_c0e": 0,
+        "rssi_c1p": 0,
+        "rssi_c1e": 0
+      },
+      "chain_measurements_available": false
+    }
+  }
+}

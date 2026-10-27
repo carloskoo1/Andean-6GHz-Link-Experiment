@@ -21,3 +21,7 @@ La [V4](v4/README.md) ensaya la conciliación de respuestas perdidas y una guard
 ## Ejecutor integrado V5
 
 La [V5](v5/README.md) reúne calendario, contrato API, recuperación y guardia, añade cronología y exclusión de intervalos, y prepara TCP y el procedimiento de campo. Sigue exclusivamente en simulación, sin instalar en CU01.
+
+## Seguimiento secundario de degradación RF
+
+Ver [anexo y auditoría de adquisición](secondary_diagnostics/README.md). Análisis secundario motivado por el segmento 16 y sus antecedentes; conserva calendario y O5. Auditor pasivo de SQLite, sin habilitación RF ni instalación de servicios.

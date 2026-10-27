@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-27",
+  "audit_tests_normal": 10,
+  "audit_tests_optimized": 10,
+  "normal_passed": true,
+  "optimized_passed": true,
+  "database_open_mode": "ro",
+  "live_rf_changes": false,
+  "service_installation": false,
+  "chains_available": false,
+  "field_protocol_frozen": false,
+  "sha256": {
+    "test_audit_acquisition.py": "dd7e6054f02f1bdade9388486c39a7d9d93b04a3db72eaaf7a0a1d5b3f776291",
+    "AUDITORIA_ADQUISICION_20261027.md": "656f25acdb88ea4d274a77465fc5892830c77b0b52a5632a21e9dedd5e53a6a3",
+    "AUDITORIA_ADQUISICION_20261027.json": "fa3b0106ff2ec8ecc05c8f811ec159afd992c524f31aedb3690d9623241fafb4",
+    "README.md": "d45e06c5d2104786689450eaade1be00100c6e0e348ace4e2de16e59703ab1aa",
+    "RESULTADOS_RESUMIDOS_20261027.json": "4c445489ad0abe91d89bb55fee786aa181c37c0f19bce558f2f607585432822b",
+    "audit_acquisition.py": "3fd2b953f716c179c3cf963fb46c9498382f4db9d57c5266759779e549a46a3f",
+    "ANEXO_SECUNDARIO_V1_20261027.md": "1bc5bb1648b0ca30e62564cf03a2ac844da3d946b293dce1ce764175fdeb5b69",
+    "INFORME_RETROSPECTIVO_20261027.md": "2ca81a377c2c7de0d529de0bff9e41ea36e399e9fbc13330db60d64c49c51f97",
+    "retrospectivo_s16.py": "e829559669fbd6309fbe1db0ee35932476ac1fc600c74cefa68180b7865431f8"
+  }
+}
