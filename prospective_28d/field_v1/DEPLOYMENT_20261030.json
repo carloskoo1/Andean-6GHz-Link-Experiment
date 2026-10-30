@@ -1,0 +1,65 @@
+{
+  "verified_at_local": "2026-10-30T02:00:49.300299-05:00",
+  "installation": {
+    "enabled_at_utc": "2026-10-30T06:59:08.574034+00:00",
+    "authorization": "Carlos: verificar e iniciar campa\u00f1a prospectiva, conversaci\u00f3n 30/10/2026",
+    "automatic_RF_before_D0": false
+  },
+  "status": "INSTALLED_ENABLED_WAITING_START",
+  "units": {
+    "luisita-prospective.timer": {
+      "Result": "success",
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "UnitFileState": "enabled"
+    },
+    "luisita-prospective.service": {
+      "Result": "success",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "static"
+    },
+    "andean-campaign.timer": {
+      "Result": "success",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "disabled"
+    },
+    "andean-throughput.timer": {
+      "Result": "success",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "disabled"
+    },
+    "atmoslink-throughput-6g.timer": {
+      "Result": "success",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "disabled"
+    },
+    "atmoslink-radio-config-6g.service": {
+      "Result": "success",
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "weather-logger.service": {
+      "Result": "success",
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    }
+  },
+  "journal_excerpt": "Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nWAITING_START\nluisita-prospective.service: Deactivated successfully.\nFinished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nStarting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nWAITING_START\nluisita-prospective.service: Deactivated successfully.\nFinished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\n",
+  "frozen_hashes_verified": true,
+  "HALT": false,
+  "PENDING": false,
+  "programmed_start": "2026-10-30T12:00:00-05:00",
+  "programmed_end": "2026-11-27T12:00:00-05:00",
+  "first_target": [
+    6655,
+    40
+  ],
+  "prospective_exposures_started": false,
+  "first_prospective_RF_change_and_TCP": "PENDING_REAL_EXECUTION"
+}

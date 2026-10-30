@@ -1,4 +1,6 @@
-# Luisita: candidato de campo prospectivo — 30/10/2026
+# Luisita: controlador de campo prospectivo — 30/10/2026
+
+Instalación comprobada: habilitada a las 01:59 del 30/10/2026, con WAITING_START correcto. Los tres timers anteriores están deshabilitados; RF y meteorología continúan. Inicio programado a las 12:00. La primera transición y medición siguen pendientes de ejecución real. Evidencia: DEPLOYMENT_20261030.json.
 
 Autorización: Carlos solicitó verificar las 48 horas e iniciar la campaña prospectiva. La instalación administrativa se ejecuta directamente en su terminal; la conexión remota rechaza sudo. No es necesaria una nueva autorización científica para esta acción ya solicitada.
 

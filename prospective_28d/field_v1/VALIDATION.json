@@ -8,7 +8,8 @@
   "systemd_unit_verify": "passed",
   "shell_syntax": "passed",
   "new_RF_pilot_performed": false,
-  "deployment_status": "ADMIN_INSTALLATION_PENDING",
+  "deployment_status": "INSTALLED_ENABLED_WAITING_START",
   "campaign_start_programmed": "2026-10-30T12:00:00-05:00",
-  "campaign_end_programmed": "2026-11-27T12:00:00-05:00"
+  "campaign_end_programmed": "2026-11-27T12:00:00-05:00",
+  "installation_verified_at_local": "2026-10-30T02:00:49.300299-05:00"
 }
