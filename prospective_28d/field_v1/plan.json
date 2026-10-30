@@ -1,0 +1,516 @@
+{
+  "version": "FIELD_CANDIDATE_1",
+  "campaign_id": "LUISITA_PROSPECTIVE_28D_20261030",
+  "timezone": "America/Lima",
+  "authorization": "Carlos: verificar y comenzar, 30/10/2026",
+  "tcp": {
+    "duration_seconds": 8,
+    "omit_seconds": 1,
+    "parallel_streams": 1,
+    "interval_minutes": 15
+  },
+  "settle_seconds": 1800,
+  "coverage_rule": {
+    "valid_DL_min": 36,
+    "hours_with_DL_min": 9,
+    "nominal_opportunities": 48,
+    "sensitivity_percent": [
+      50,
+      75,
+      90
+    ]
+  },
+  "reserve_policy": "REFERENCE_7000_20_NO_FACTORIAL_REPLICATE",
+  "windows": [
+    {
+      "segment_id": "P01_S01",
+      "cycle": 1,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-10-30T12:00:00-05:00",
+      "end_local": "2026-10-31T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_S02",
+      "cycle": 1,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-10-31T00:00:00-05:00",
+      "end_local": "2026-10-31T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_S03",
+      "cycle": 1,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-10-31T12:00:00-05:00",
+      "end_local": "2026-11-01T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_S04",
+      "cycle": 1,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-01T00:00:00-05:00",
+      "end_local": "2026-11-01T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_S05",
+      "cycle": 1,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-01T12:00:00-05:00",
+      "end_local": "2026-11-02T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_S06",
+      "cycle": 1,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-02T00:00:00-05:00",
+      "end_local": "2026-11-02T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P01_RESERVE",
+      "cycle": 1,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-02T12:00:00-05:00",
+      "end_local": "2026-11-03T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S01",
+      "cycle": 2,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-03T12:00:00-05:00",
+      "end_local": "2026-11-04T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S02",
+      "cycle": 2,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-04T00:00:00-05:00",
+      "end_local": "2026-11-04T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S03",
+      "cycle": 2,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-04T12:00:00-05:00",
+      "end_local": "2026-11-05T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S04",
+      "cycle": 2,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-05T00:00:00-05:00",
+      "end_local": "2026-11-05T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S05",
+      "cycle": 2,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-05T12:00:00-05:00",
+      "end_local": "2026-11-06T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_S06",
+      "cycle": 2,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-06T00:00:00-05:00",
+      "end_local": "2026-11-06T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P02_RESERVE",
+      "cycle": 2,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-06T12:00:00-05:00",
+      "end_local": "2026-11-07T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S01",
+      "cycle": 3,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-07T12:00:00-05:00",
+      "end_local": "2026-11-08T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S02",
+      "cycle": 3,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-08T00:00:00-05:00",
+      "end_local": "2026-11-08T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S03",
+      "cycle": 3,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-08T12:00:00-05:00",
+      "end_local": "2026-11-09T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S04",
+      "cycle": 3,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-09T00:00:00-05:00",
+      "end_local": "2026-11-09T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S05",
+      "cycle": 3,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-09T12:00:00-05:00",
+      "end_local": "2026-11-10T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_S06",
+      "cycle": 3,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-10T00:00:00-05:00",
+      "end_local": "2026-11-10T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P03_RESERVE",
+      "cycle": 3,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-10T12:00:00-05:00",
+      "end_local": "2026-11-11T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S01",
+      "cycle": 4,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-11T12:00:00-05:00",
+      "end_local": "2026-11-12T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S02",
+      "cycle": 4,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-12T00:00:00-05:00",
+      "end_local": "2026-11-12T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S03",
+      "cycle": 4,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-12T12:00:00-05:00",
+      "end_local": "2026-11-13T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S04",
+      "cycle": 4,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-13T00:00:00-05:00",
+      "end_local": "2026-11-13T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S05",
+      "cycle": 4,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-13T12:00:00-05:00",
+      "end_local": "2026-11-14T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_S06",
+      "cycle": 4,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-14T00:00:00-05:00",
+      "end_local": "2026-11-14T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P04_RESERVE",
+      "cycle": 4,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-14T12:00:00-05:00",
+      "end_local": "2026-11-15T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S01",
+      "cycle": 5,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-15T12:00:00-05:00",
+      "end_local": "2026-11-16T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S02",
+      "cycle": 5,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-16T00:00:00-05:00",
+      "end_local": "2026-11-16T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S03",
+      "cycle": 5,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-16T12:00:00-05:00",
+      "end_local": "2026-11-17T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S04",
+      "cycle": 5,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-17T00:00:00-05:00",
+      "end_local": "2026-11-17T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S05",
+      "cycle": 5,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-17T12:00:00-05:00",
+      "end_local": "2026-11-18T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_S06",
+      "cycle": 5,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-18T00:00:00-05:00",
+      "end_local": "2026-11-18T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P05_RESERVE",
+      "cycle": 5,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-18T12:00:00-05:00",
+      "end_local": "2026-11-19T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S01",
+      "cycle": 6,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-19T12:00:00-05:00",
+      "end_local": "2026-11-20T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S02",
+      "cycle": 6,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-20T00:00:00-05:00",
+      "end_local": "2026-11-20T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S03",
+      "cycle": 6,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-20T12:00:00-05:00",
+      "end_local": "2026-11-21T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S04",
+      "cycle": 6,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-21T00:00:00-05:00",
+      "end_local": "2026-11-21T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S05",
+      "cycle": 6,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-21T12:00:00-05:00",
+      "end_local": "2026-11-22T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_S06",
+      "cycle": 6,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-22T00:00:00-05:00",
+      "end_local": "2026-11-22T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P06_RESERVE",
+      "cycle": 6,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-22T12:00:00-05:00",
+      "end_local": "2026-11-23T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S01",
+      "cycle": 7,
+      "slot": 1,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-23T12:00:00-05:00",
+      "end_local": "2026-11-24T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S02",
+      "cycle": 7,
+      "slot": 2,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6475,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-24T00:00:00-05:00",
+      "end_local": "2026-11-24T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S03",
+      "cycle": 7,
+      "slot": 3,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-24T12:00:00-05:00",
+      "end_local": "2026-11-25T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S04",
+      "cycle": 7,
+      "slot": 4,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-25T00:00:00-05:00",
+      "end_local": "2026-11-25T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S05",
+      "cycle": 7,
+      "slot": 5,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 6655,
+      "bandwidth_mhz": 40,
+      "start_local": "2026-11-25T12:00:00-05:00",
+      "end_local": "2026-11-26T00:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_S06",
+      "cycle": 7,
+      "slot": 6,
+      "phase": "PROSPECTIVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-26T00:00:00-05:00",
+      "end_local": "2026-11-26T12:00:00-05:00"
+    },
+    {
+      "segment_id": "P07_RESERVE",
+      "cycle": 7,
+      "slot": 7,
+      "phase": "RESERVE",
+      "frequency_mhz": 7000,
+      "bandwidth_mhz": 20,
+      "start_local": "2026-11-26T12:00:00-05:00",
+      "end_local": "2026-11-27T12:00:00-05:00"
+    }
+  ]
+}

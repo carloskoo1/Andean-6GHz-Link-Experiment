@@ -70,6 +70,8 @@ def save_failure(path, row, instant, message, attempts):
 
 
 def run_once(config_path, instant=None, dry_run=False, runner=subprocess.run):
+    if (Path(__file__).resolve().parent / "prospective_runtime/ENABLED.json").exists():
+        raise CampaignError("Prospectiva habilitada: ejecutor original bloqueado.")
     config_path = config_path.resolve()
     config = load_config(config_path)
     rows = schedule(config)

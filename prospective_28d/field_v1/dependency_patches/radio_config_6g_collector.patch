@@ -1,0 +1,4 @@
+--- a/weather_station/telemetry/radio_config_6g_collector.py
++++ b/weather_station/telemetry/radio_config_6g_collector.py
+@@ -95,0 +96 @@
++        2: 40.0,  # Verificado con codificacion RF y registros historicos duales.

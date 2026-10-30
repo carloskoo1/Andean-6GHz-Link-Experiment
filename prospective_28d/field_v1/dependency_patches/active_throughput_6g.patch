@@ -1,0 +1,5 @@
+--- a/weather_station/telemetry/active_throughput_6g.py
++++ b/weather_station/telemetry/active_throughput_6g.py
+@@ -424,0 +425,2 @@
++    if Path("/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_runtime/ENABLED.json").exists():
++        raise SystemExit("Prospectiva habilitada: usar el controlador serial de campo.")

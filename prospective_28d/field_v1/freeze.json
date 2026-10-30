@@ -1,0 +1,14 @@
+{
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py": "c7ed8c19f5ada3b6c2dd2205a7e5946d917222f3b82267f74bb0d557ca75cac2",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/test_controller.py": "f81a579712f2c99bbb96af3eb795d817d93872dc8cca5cea4037b3f9a9995b80",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/backend.py": "d03f04e70a9041e720200eff23865e5617b3b6aa446420f66c38706148bc3709",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/plan.json": "0093017fe4171be2801950da425af63175fdba080a5f1d51135c561740de5b58",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/install.sh": "8da3716c246c77d7e33ec740dd9e1107e28b602c686b3efee28024c478fde3ce",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/luisita-prospective.service": "7e74ee04a402d305e0809d30b7ed77dc501ecab9d2a978bfb8549d4c36721ed5",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/luisita-prospective.timer": "faae126ebd0def91bd7395f93099d2eaa5c9ad1c30131e0a9ee4195c1df2b0ff",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_plan.template.json": "0ac5323e7a9107197fa9640d59f77bc492da4b363035b60455d1350fa32ec804",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_orchestrator.py": "859f84b43bb53a7be09f499f64706d9d26f020a326539a34a01ddefc7bf06cc1",
+  "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_executor.py": "416871ccadaa6af1bb236afad5551832156b997970092662aacb7cd08c3004a8",
+  "/home/carlos/Proyectos/EstacionMeteorologica/weather_station/telemetry/active_throughput_6g.py": "b8bff8aa2427a9bfeac74f7b638efe4f4ab5f43832cf7618d627a11dc14bed0f",
+  "/home/carlos/Proyectos/EstacionMeteorologica/weather_station/telemetry/radio_config_6g_collector.py": "c16405b1938335e79229367c3348da6b8391cc48fa49f586c2411a79055a08f4"
+}

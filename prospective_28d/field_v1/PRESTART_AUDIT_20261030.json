@@ -1,0 +1,74 @@
+{
+  "generated_local": "2026-10-30T01:53:29.786393-05:00",
+  "campaign_original_closed": "2026-10-27T00:00:00-05:00",
+  "reference_committed": "2026-10-27T00:02:58.634177-05:00",
+  "first_48h_end": "2026-10-29T00:02:58.634177-05:00",
+  "first_48h": {
+    "rows": 574,
+    "dual_matching": 573,
+    "invalid_records": [
+      {
+        "id": 15883,
+        "timestamp_local": "2026-10-27T17:48:33-05:00",
+        "collection_status": "COLLECTION_ERROR",
+        "operating_frequency_mhz": null,
+        "channel_bandwidth_mhz": null,
+        "sm_operating_frequency_mhz": null,
+        "sm_channel_bandwidth_mhz": null,
+        "dl_rssi_dbm": null,
+        "ul_rssi_dbm": null
+      }
+    ]
+  },
+  "last_48h": {
+    "start": "2026-10-28T01:53:29.786393-05:00",
+    "rows": 574,
+    "dual_matching": 574,
+    "max_collection_gap_seconds": 325.0
+  },
+  "weather_latest": [
+    {
+      "station_id": "CU01",
+      "last_observation": "2026-10-30T01:47:48-05:00"
+    },
+    {
+      "station_id": "SJ01",
+      "last_observation": "2026-10-30T01:52:44-05:00"
+    }
+  ],
+  "backup_directory": "/home/carlos/Backups/Luisita_prospective_prestart/20261030_014223",
+  "backup_sqlite_quick_check": "ok",
+  "read_only_preflight": {
+    "ap_sm_rpi_reachable": true,
+    "AP_api_authentication": true,
+    "AP_SM_reference": [
+      7000,
+      20
+    ],
+    "firmware": "5.4",
+    "AP_SM_power_dbm": [
+      10,
+      3
+    ],
+    "AP_SM_antenna_gain_dbi": [
+      26,
+      26
+    ],
+    "TDD_DL_UL": [
+      50,
+      50
+    ],
+    "TDD_frame_us": 5000,
+    "NTP_synchronized": true
+  },
+  "software_validation": {
+    "normal_tests": 16,
+    "optimized_tests": 16,
+    "systemd_analyze_verify": "passed",
+    "bash_syntax": "passed"
+  },
+  "status": "ADMIN_INSTALLATION_PENDING",
+  "RF_writes_executed_this_session": 0,
+  "physical_inspection_performed": false,
+  "limitations": "Sampled telemetry cannot prove absence of every short interruption. No physical inspection or new RF pilot is claimed. First prospective transition remains to be verified in real hardware."
+}

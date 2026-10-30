@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-30",
+  "controller_tests_normal": 16,
+  "controller_tests_optimized": 16,
+  "legacy_regression_tests": 29,
+  "test_scope": "ISOLATED_SIMULATED_BACKEND_NOT_FIELD_MEASUREMENTS",
+  "real_readonly_preflight": "passed",
+  "systemd_unit_verify": "passed",
+  "shell_syntax": "passed",
+  "new_RF_pilot_performed": false,
+  "deployment_status": "ADMIN_INSTALLATION_PENDING",
+  "campaign_start_programmed": "2026-10-30T12:00:00-05:00",
+  "campaign_end_programmed": "2026-11-27T12:00:00-05:00"
+}

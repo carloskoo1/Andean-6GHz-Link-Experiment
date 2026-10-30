@@ -1,0 +1,67 @@
+Transición simulada: F6655_B20
+Reintento aplazado para F6655_B20.
+Reintentos agotados para F6655_B20: 3/3. Transiciones RF automaticas bloqueadas para esta secuencia.
+SAFE_ABORT activo: RECOVERY_REQUIRED. Transiciones RF automaticas bloqueadas.
+Transición aplicada: F6655_B20
+Sin transición: F6655_B20 ya fue aplicado.
+Autenticación automática: OK
+Cookie y test_connect: OK
+Conectividad AP/SM/RPi: OK
+centerFrequency actual: 6655
+wirelessInterfaceHTMode actual: 1
+Autenticación automática: OK
+Cookie y test_connect: OK
+Conectividad AP/SM/RPi: OK
+centerFrequency actual: 6655
+wirelessInterfaceHTMode actual: 1
+{"timestamp_utc": "2026-10-30T06:54:35.530514+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.530716+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.530833+00:00", "event": "TRIAL_CONFIRMED", "result": "OK", "detail": "remaining=300.0s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.530924+00:00", "event": "SWITCH_FAILED", "result": "ERROR", "detail": "Inestable después de confirmar.", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.531006+00:00", "event": "ROLLBACK_START", "result": "STARTED", "detail": "reaplicacion_explicita", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.531100+00:00", "event": "ROLLBACK_COMMITTED", "result": "OK", "detail": "causa=Inestable después de confirmar.", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.531932+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.532096+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.532194+00:00", "event": "SWITCH_FAILED", "result": "ERROR", "detail": "No se recuperó el enlace.", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.532281+00:00", "event": "ROLLBACK_START", "result": "STARTED", "detail": "cancelacion_del_trial", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.532366+00:00", "event": "ROLLBACK_COMMITTED", "result": "OK", "detail": "causa=No se recuperó el enlace.", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.567059+00:00", "event": "PILOT_START", "result": "STARTED", "detail": "dwell_seconds=600", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.567563+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.567713+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.567827+00:00", "event": "TRIAL_CONFIRMED", "result": "OK", "detail": "remaining=300.0s", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.567920+00:00", "event": "SWITCH_COMMITTED", "result": "OK", "detail": "", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568217+00:00", "event": "PILOT_DWELL_START", "result": "OK", "detail": "dwell_seconds=600", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568317+00:00", "event": "PILOT_RETURN_START", "result": "STARTED", "detail": "", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568551+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568679+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568808+00:00", "event": "TRIAL_CONFIRMED", "result": "OK", "detail": "remaining=300.0s", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.568897+00:00", "event": "SWITCH_COMMITTED", "result": "OK", "detail": "", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.569228+00:00", "event": "PILOT_COMPLETED", "result": "OK", "detail": "", "scenario_id": "PILOT_RETURN_BASELINE", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.617755+00:00", "event": "PILOT_START", "result": "STARTED", "detail": "dwell_seconds=600", "scenario_id": "PILOT_F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 0, "phase": "PILOT"}
+{"timestamp_utc": "2026-10-30T06:54:35.668014+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.668176+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.668258+00:00", "event": "SWITCH_FAILED", "result": "ERROR", "detail": "No se recuperó el enlace.", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.668328+00:00", "event": "ROLLBACK_START", "result": "STARTED", "detail": "cancelacion_del_trial", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.668392+00:00", "event": "ROLLBACK_FAILED", "result": "AUTO_ROLLBACK", "detail": "rollback simulado fallido", "scenario_id": "ROLLBACK_PREVIOUS", "frequency_mhz": 7000, "bandwidth_mhz": 20, "days": 0, "phase": "ROLLBACK"}
+{"timestamp_utc": "2026-10-30T06:54:35.668643+00:00", "event": "SAFE_ABORT", "result": "RECOVERY_REQUIRED", "detail": "state_file=/tmp/tmpvbnt56bd/SAFE_ABORT.json", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.669778+00:00", "event": "SWITCH_BLOCKED", "result": "SAFE_ABORT", "detail": "status=RECOVERY_REQUIRED", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671364+00:00", "event": "SWITCH_START", "result": "STARTED", "detail": "", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671519+00:00", "event": "TRIAL_APPLIED", "result": "OK", "detail": "rollback_automatico=300s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671605+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=1/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671693+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=2/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671762+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=3/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671822+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=4/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671881+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=5/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.671947+00:00", "event": "TRIAL_CONFIRMED", "result": "OK", "detail": "remaining=300.0s", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672007+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=1/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672064+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=2/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672121+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=3/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672177+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=4/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672234+00:00", "event": "CONNECTIVITY_PROBE", "result": "OK", "detail": "consecutive=5/5", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+{"timestamp_utc": "2026-10-30T06:54:35.672291+00:00", "event": "SWITCH_COMMITTED", "result": "OK", "detail": "", "scenario_id": "F7000_B40", "frequency_mhz": 7000, "bandwidth_mhz": 40, "days": 7, "phase": "EXPERIMENT"}
+...........WARNING: no se pudo cerrar la sesión API: logout simulado fallido
+..................
+----------------------------------------------------------------------
+Ran 29 tests in 0.274s
+
+OK

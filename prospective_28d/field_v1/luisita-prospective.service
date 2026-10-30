@@ -1,0 +1,17 @@
+[Unit]
+Description=Luisita prospective 28-day serial RF and TCP controller
+After=network-online.target atmoslink-radio-config-6g.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=carlos
+Group=carlos
+WorkingDirectory=/home/carlos/Proyectos/Andean-6GHz-Link-Experiment
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/carlos/Proyectos/EstacionMeteorologica/venv/bin/python /home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py tick
+TimeoutStartSec=600
+Nice=5
+NoNewPrivileges=true
+AmbientCapabilities=CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_RAW

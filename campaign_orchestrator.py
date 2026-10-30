@@ -191,6 +191,8 @@ class Orchestrator:
         d=self.api.read()
         if str(d.get("centerFrequency"))!=str(s["frequency_mhz"]) or str(d.get("wirelessInterfaceHTMode"))!=bw_code(s["bandwidth_mhz"]): raise CampaignError(f"Configuración inesperada: {d.get('centerFrequency')}/{d.get('wirelessInterfaceHTMode')}")
     def switch(self,s):
+        if (Path(__file__).resolve().parent / "prospective_runtime/ENABLED.json").exists():
+            raise CampaignError("Prospectiva habilitada: cambio RF original bloqueado.")
         if self.dry:
             self.event("SWITCH_START",s,"STARTED")
             self.event("SWITCH_COMMITTED",s,"DRY_RUN")
