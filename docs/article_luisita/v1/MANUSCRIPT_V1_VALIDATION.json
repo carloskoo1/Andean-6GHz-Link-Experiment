@@ -1,0 +1,26 @@
+{
+  "source": "TESIS_LUISITA_UNC_2026_V8_ALINEACION_METODOLOGICA.docx",
+  "source_sha256": "7173c444fa51a2c81a734ccc28fab74c679b1a12661da9cd1ee63a69823b4059",
+  "output": "ARTICULO_LUISITA_V1_EFECTOS_ESPECTRALES_Y_ESTABILIDAD_TEMPORAL.docx",
+  "output_sha256": "a931ad1c04f3380b8425c8f6a33e42aa73e3d0ea066c264ce51704a6b254b215",
+  "original_data_recalculated": false,
+  "source_tables_reused": [
+    3,
+    4,
+    6,
+    7
+  ],
+  "prospective_results_reported": false,
+  "author_list_assigned": false,
+  "study_scope": "single link spectral effects and temporal stability",
+  "n_dl": 3419,
+  "n_segment_responses": 17,
+  "s16_retained": true,
+  "page_count": 10,
+  "numeric_tables_identical_to_source": true,
+  "dl_count_sum_verified": true,
+  "docx_zip_integrity": "PASS",
+  "citations_numbered_in_first_use_order": true,
+  "visual_review_all_pages": "PASS",
+  "library_file_id": "libfile_545a19841b20819198e85080e4b5639f"
+}
