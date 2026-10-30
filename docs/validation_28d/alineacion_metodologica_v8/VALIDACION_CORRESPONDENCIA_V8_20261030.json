@@ -1,0 +1,24 @@
+{
+  "cutoff": "2026-10-30",
+  "source_document": "TESIS_LUISITA_UNC_2026_V7_RESULTADOS_ORIGINALES.docx",
+  "source_version": 3,
+  "source_sha256": "c0ac5d1448a182c5e3f58309024591aa2be23dc1530df4fc334f3ace9179a7c3",
+  "output_document": "TESIS_LUISITA_UNC_2026_V8_ALINEACION_METODOLOGICA.docx",
+  "output_sha256": "7173c444fa51a2c81a734ccc28fab74c679b1a12661da9cd1ee63a69823b4059",
+  "checks": {
+    "pages": 95,
+    "index_references_verified": 170,
+    "numerical_tables_unchanged": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "embedded_images_unchanged": 16,
+    "S16_retained": true,
+    "DOCX_archive_valid": true,
+    "body_unchanged_after_index_pagination": true
+  },
+  "scope": "Correspondence of questions, objectives, hypotheses, variables, indicators and instruments; no data recalculation, no new field observation or expert opinion claimed."
+}
