@@ -1,0 +1,195 @@
+{
+  "observed_at_local": "2026-10-31T11:09:07.011500-05:00",
+  "scope": "Read-only campaign audit; no RF writes, no throughput tests, no service or calendar changes",
+  "runtime": {
+    "ENABLED.json": {
+      "sha256": "4dc3352a2160e8bae4356bc152ead6236adc5ab088cdc342de436482f8287c41",
+      "content": "{\n  \"enabled_at_utc\": \"2026-10-30T06:59:08.574034+00:00\",\n  \"authorization\": \"Carlos: verificar e iniciar campa\\u00f1a prospectiva, conversaci\\u00f3n 30/10/2026\",\n  \"automatic_RF_before_D0\": false\n}"
+    },
+    "HALT.json": {
+      "sha256": "e5c97e5a3464c70bc87d325639ecd0b279fda7ff3dac507e939d81e377cb35b8",
+      "content": "{\n  \"reason\": \"Dual target/connectivity not stable before deadline\",\n  \"at\": \"2026-10-30T17:02:33.065156+00:00\"\n}"
+    },
+    "PENDING.json": {
+      "sha256": "a52ebbb8d4df8f962b0c42348df7a82839e3e827689e46257765dc164254771c",
+      "content": "{\n  \"row\": {\n    \"segment_id\": \"P01_S01\",\n    \"cycle\": 1,\n    \"slot\": 1,\n    \"phase\": \"PROSPECTIVE\",\n    \"frequency_mhz\": 6655,\n    \"bandwidth_mhz\": 40,\n    \"start_local\": \"2026-10-30T12:00:00-05:00\",\n    \"end_local\": \"2026-10-31T00:00:00-05:00\"\n  },\n  \"before\": {\n    \"ap_f\": 7000.0,\n    \"ap_b\": 20,\n    \"sm_f\": 7000.0,\n    \"sm_b\": 20\n  },\n  \"created\": \"2026-10-30T17:00:01.544921+00:00\"\n}"
+    },
+    "events.jsonl": {
+      "sha256": "1f13f0d85c2e4c9eea7a3ea075066979debe90ce1390c8de33574df30a1f967a",
+      "content": "{\"timestamp_utc\": \"2026-10-30T17:00:01.548935+00:00\", \"event\": \"WINDOW_INTENT\", \"row\": {\"segment_id\": \"P01_S01\", \"cycle\": 1, \"slot\": 1, \"phase\": \"PROSPECTIVE\", \"frequency_mhz\": 6655, \"bandwidth_mhz\": 40, \"start_local\": \"2026-10-30T12:00:00-05:00\", \"end_local\": \"2026-10-31T00:00:00-05:00\"}, \"before\": {\"ap_f\": 7000.0, \"ap_b\": 20, \"sm_f\": 7000.0, \"sm_b\": 20}}\n{\"timestamp_utc\": \"2026-10-30T17:00:02.541423+00:00\", \"event\": \"TRIAL_ACK\", \"segment\": \"P01_S01\"}\n{\"timestamp_utc\": \"2026-10-30T17:02:33.062127+00:00\", \"event\": \"CONTROLLER_ERROR\", \"error\": \"Dual target/connectivity not stable before deadline\"}\n"
+    }
+  },
+  "frozen_files": [
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py",
+      "sha256": "c7ed8c19f5ada3b6c2dd2205a7e5946d917222f3b82267f74bb0d557ca75cac2",
+      "expected": "c7ed8c19f5ada3b6c2dd2205a7e5946d917222f3b82267f74bb0d557ca75cac2",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/test_controller.py",
+      "sha256": "f81a579712f2c99bbb96af3eb795d817d93872dc8cca5cea4037b3f9a9995b80",
+      "expected": "f81a579712f2c99bbb96af3eb795d817d93872dc8cca5cea4037b3f9a9995b80",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/backend.py",
+      "sha256": "d03f04e70a9041e720200eff23865e5617b3b6aa446420f66c38706148bc3709",
+      "expected": "d03f04e70a9041e720200eff23865e5617b3b6aa446420f66c38706148bc3709",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/plan.json",
+      "sha256": "0093017fe4171be2801950da425af63175fdba080a5f1d51135c561740de5b58",
+      "expected": "0093017fe4171be2801950da425af63175fdba080a5f1d51135c561740de5b58",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/install.sh",
+      "sha256": "8da3716c246c77d7e33ec740dd9e1107e28b602c686b3efee28024c478fde3ce",
+      "expected": "8da3716c246c77d7e33ec740dd9e1107e28b602c686b3efee28024c478fde3ce",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/luisita-prospective.service",
+      "sha256": "7e74ee04a402d305e0809d30b7ed77dc501ecab9d2a978bfb8549d4c36721ed5",
+      "expected": "7e74ee04a402d305e0809d30b7ed77dc501ecab9d2a978bfb8549d4c36721ed5",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/luisita-prospective.timer",
+      "sha256": "faae126ebd0def91bd7395f93099d2eaa5c9ad1c30131e0a9ee4195c1df2b0ff",
+      "expected": "faae126ebd0def91bd7395f93099d2eaa5c9ad1c30131e0a9ee4195c1df2b0ff",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_plan.template.json",
+      "sha256": "0ac5323e7a9107197fa9640d59f77bc492da4b363035b60455d1350fa32ec804",
+      "expected": "0ac5323e7a9107197fa9640d59f77bc492da4b363035b60455d1350fa32ec804",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_orchestrator.py",
+      "sha256": "859f84b43bb53a7be09f499f64706d9d26f020a326539a34a01ddefc7bf06cc1",
+      "expected": "859f84b43bb53a7be09f499f64706d9d26f020a326539a34a01ddefc7bf06cc1",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/campaign_executor.py",
+      "sha256": "416871ccadaa6af1bb236afad5551832156b997970092662aacb7cd08c3004a8",
+      "expected": "416871ccadaa6af1bb236afad5551832156b997970092662aacb7cd08c3004a8",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/EstacionMeteorologica/weather_station/telemetry/active_throughput_6g.py",
+      "sha256": "b8bff8aa2427a9bfeac74f7b638efe4f4ab5f43832cf7618d627a11dc14bed0f",
+      "expected": "b8bff8aa2427a9bfeac74f7b638efe4f4ab5f43832cf7618d627a11dc14bed0f",
+      "match": true
+    },
+    {
+      "path": "/home/carlos/Proyectos/EstacionMeteorologica/weather_station/telemetry/radio_config_6g_collector.py",
+      "sha256": "c16405b1938335e79229367c3348da6b8391cc48fa49f586c2411a79055a08f4",
+      "expected": "c16405b1938335e79229367c3348da6b8391cc48fa49f586c2411a79055a08f4",
+      "match": true
+    }
+  ],
+  "tcp": [],
+  "rf_around_trial": [
+    {
+      "timestamp_local": "2026-10-30T11:51:02-05:00",
+      "operating_frequency_mhz": 7000.0,
+      "channel_bandwidth_mhz": 20.0,
+      "sm_operating_frequency_mhz": 7000.0,
+      "sm_channel_bandwidth_mhz": 20.0,
+      "collection_status": "LINK_OPERATIONAL_DUAL",
+      "error": ""
+    },
+    {
+      "timestamp_local": "2026-10-30T11:56:03-05:00",
+      "operating_frequency_mhz": 7000.0,
+      "channel_bandwidth_mhz": 20.0,
+      "sm_operating_frequency_mhz": 7000.0,
+      "sm_channel_bandwidth_mhz": 20.0,
+      "collection_status": "LINK_OPERATIONAL_DUAL",
+      "error": ""
+    },
+    {
+      "timestamp_local": "2026-10-30T12:01:04-05:00",
+      "operating_frequency_mhz": null,
+      "channel_bandwidth_mhz": null,
+      "sm_operating_frequency_mhz": null,
+      "sm_channel_bandwidth_mhz": null,
+      "collection_status": "COLLECTION_ERROR",
+      "error": "RuntimeError: SSH 192.168.1.9 show dashboard: código 255: ssh: connect to host 192.168.1.9 port 22: No route to host"
+    },
+    {
+      "timestamp_local": "2026-10-30T12:06:19-05:00",
+      "operating_frequency_mhz": null,
+      "channel_bandwidth_mhz": null,
+      "sm_operating_frequency_mhz": null,
+      "sm_channel_bandwidth_mhz": null,
+      "collection_status": "COLLECTION_ERROR",
+      "error": "RuntimeError: SSH 192.168.1.9 show dashboard: código 255: ssh: connect to host 192.168.1.9 port 22: No route to host"
+    },
+    {
+      "timestamp_local": "2026-10-30T12:11:20-05:00",
+      "operating_frequency_mhz": 7000.0,
+      "channel_bandwidth_mhz": 20.0,
+      "sm_operating_frequency_mhz": 7000.0,
+      "sm_channel_bandwidth_mhz": 20.0,
+      "collection_status": "LINK_OPERATIONAL_DUAL",
+      "error": ""
+    },
+    {
+      "timestamp_local": "2026-10-30T12:16:21-05:00",
+      "operating_frequency_mhz": 7000.0,
+      "channel_bandwidth_mhz": 20.0,
+      "sm_operating_frequency_mhz": 7000.0,
+      "sm_channel_bandwidth_mhz": 20.0,
+      "collection_status": "LINK_OPERATIONAL_DUAL",
+      "error": ""
+    }
+  ],
+  "latest_rf": [
+    {
+      "timestamp_local": "2026-10-31T11:07:02-05:00",
+      "operating_frequency_mhz": 7000.0,
+      "channel_bandwidth_mhz": 20.0,
+      "sm_operating_frequency_mhz": 7000.0,
+      "sm_channel_bandwidth_mhz": 20.0,
+      "collection_status": "LINK_OPERATIONAL_DUAL"
+    }
+  ],
+  "weather": [
+    {
+      "station_id": "CU01",
+      "timestamp_local": "2026-10-31T11:08:40-05:00",
+      "bme_ok": 1,
+      "rain_ok": 1,
+      "wind_ok": 1
+    }
+  ],
+  "sj01_weather": [
+    {
+      "station_id": "SJ01",
+      "timestamp_local": "2026-10-31T11:07:48-05:00",
+      "bme_ok": 1,
+      "rain_ok": 1,
+      "wind_ok": 1
+    }
+  ],
+  "sync": [
+    {
+      "station_id": "SJ01",
+      "last_remote_timestamp": "2026-10-31T11:07:48-05:00",
+      "last_sync_completed_utc": "2026-10-31T16:08:47.896950+00:00",
+      "last_status": "OK",
+      "last_error": null
+    }
+  ],
+  "services": "Result=success\nId=luisita-prospective.timer\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n\nResult=success\nExecMainExitTimestamp=Sat 2026-10-31 11:09:00 -05\nExecMainStatus=0\nId=luisita-prospective.service\nActiveState=inactive\nSubState=dead\nUnitFileState=static\n\nResult=success\nExecMainExitTimestamp=\nExecMainStatus=0\nId=atmoslink-radio-config-6g.service\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nResult=success\nExecMainExitTimestamp=\nExecMainStatus=0\nId=weather-logger.service\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nResult=success\nExecMainExitTimestamp=\nExecMainStatus=0\nId=atmoslink-inhibit-sleep.service\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nResult=success\nId=andean-campaign.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n\nResult=success\nId=andean-throughput.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n\nResult=success\nId=atmoslink-throughput-6g.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n\nResult=success\nExecMainExitTimestamp=Sat 2026-10-31 02:39:52 -05\nExecMainStatus=0\nId=atmoslink-remote-backup.service\nActiveState=inactive\nSubState=dead\nUnitFileState=static\n\nResult=success\nExecMainExitTimestamp=Sat 2026-10-31 10:57:37 -05\nExecMainStatus=0\nId=atmoslink-backup-recovery.service\nActiveState=inactive\nSubState=dead\nUnitFileState=static\n",
+  "clock": "Timezone=America/Lima\nNTPSynchronized=yes\n",
+  "uptime": " 11:09:07 up 41 days,  1:50,  2 users,  load average: 0.32, 0.64, 0.69\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda2       468G   76G  368G  18% /\n",
+  "first_trial_journal": "Oct 30 11:59:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 30 11:59:00 Controlador python[114743]: WAITING_START\nOct 30 11:59:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 30 11:59:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 30 12:00:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 30 12:00:01 Controlador python[117527]: {\"timestamp_utc\": \"2026-10-30T17:00:01.548935+00:00\", \"event\": \"WINDOW_INTENT\", \"row\": {\"segment_id\": \"P01_S01\", \"cycle\": 1, \"slot\": 1, \"phase\": \"PROSPECTIVE\", \"frequency_mhz\": 6655, \"bandwidth_mhz\": 40, \"start_local\": \"2026-10-30T12:00:00-05:00\", \"end_local\": \"2026-10-31T00:00:00-05:00\"}, \"before\": {\"ap_f\": 7000.0, \"ap_b\": 20, \"sm_f\": 7000.0, \"sm_b\": 20}}\nOct 30 12:00:02 Controlador python[117527]: {\"timestamp_utc\": \"2026-10-30T17:00:02.541423+00:00\", \"event\": \"TRIAL_ACK\", \"segment\": \"P01_S01\"}\nOct 30 12:02:33 Controlador python[117527]: {\"timestamp_utc\": \"2026-10-30T17:02:33.062127+00:00\", \"event\": \"CONTROLLER_ERROR\", \"error\": \"Dual target/connectivity not stable before deadline\"}\nOct 30 12:02:33 Controlador python[117527]: Traceback (most recent call last):\nOct 30 12:02:33 Controlador python[117527]:   File \"/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py\", line 219, in <module>\nOct 30 12:02:33 Controlador python[117527]:     main()\nOct 30 12:02:33 Controlador python[117527]:   File \"/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py\", line 208, in main\nOct 30 12:02:33 Controlador python[117527]:     print(Controller(plan,io).step(),flush=True)\nOct 30 12:02:33 Controlador python[117527]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nOct 30 12:02:33 Controlador python[117527]:   File \"/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py\", line 145, in step\nOct 30 12:02:33 Controlador python[117527]:     self.io.wait_target(row, deadline_seconds=150)\nOct 30 12:02:33 Controlador python[117527]:   File \"/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/backend.py\", line 94, in wait_target\nOct 30 12:02:33 Controlador python[117527]:     raise RuntimeError('Dual target/connectivity not stable before deadline')\nOct 30 12:02:33 Controlador python[117527]: RuntimeError: Dual target/connectivity not stable before deadline\nOct 30 12:02:33 Controlador systemd[1]: luisita-prospective.service: Main process exited, code=exited, status=1/FAILURE\nOct 30 12:02:33 Controlador systemd[1]: luisita-prospective.service: Failed with result 'exit-code'.\nOct 30 12:02:33 Controlador systemd[1]: Failed to start luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 30 12:02:33 Controlador systemd[1]: luisita-prospective.service: Consumed 1.689s CPU time.\nOct 30 12:02:33 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 30 12:02:33 Controlador python[125295]: HALTED\nOct 30 12:02:33 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 30 12:02:33 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 30 12:03:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 30 12:03:00 Controlador python[126526]: HALTED\nOct 30 12:03:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 30 12:03:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 30 12:04:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 30 12:04:00 Controlador python[129419]: HALTED\nOct 30 12:04:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 30 12:04:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\n"
+}
