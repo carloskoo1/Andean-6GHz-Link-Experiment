@@ -1,0 +1,13 @@
+{
+  "desired": {
+    "wirelessInterfaceScanFrequencyBandwidth": "3",
+    "wirelessInterfaceScanFrequencyListTwenty": "6475 6655 7000",
+    "wirelessInterfaceScanFrequencyListForty": "6475 6655 7000"
+  },
+  "readback": {
+    "ap_f": 7000.0,
+    "ap_b": 20,
+    "sm_f": 7000.0,
+    "sm_b": 20
+  }
+}

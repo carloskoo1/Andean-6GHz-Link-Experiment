@@ -1,0 +1,109 @@
+{
+  "observed_at_local": "2026-10-31T11:27:19.569388-05:00",
+  "deployment": {
+    "activated_at_utc": "2026-10-31T16:24:54.907064+00:00",
+    "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+    "start_local": "2026-10-31T12:00:00-05:00",
+    "end_local": "2026-11-28T12:00:00-05:00",
+    "reference_readback": {
+      "ap_f": 7000.0,
+      "ap_b": 20,
+      "sm_f": 7000.0,
+      "sm_b": 20
+    },
+    "previous_attempt_tests": 0,
+    "pilot_tcp": [
+      [
+        "DL",
+        "OK",
+        1
+      ],
+      [
+        "UL",
+        "OK",
+        1
+      ]
+    ],
+    "backup_manifest": "/home/carlos/Backups/Luisita_prospective_recovery/20261031_111743/SHA256.json",
+    "existing_systemd_entry_point": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py",
+    "new_release": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v2",
+    "halt_reconciled_only_after_evidence": true
+  },
+  "runtime_status": {
+    "observed_at_utc": "2026-10-31T16:27:00.348800+00:00",
+    "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+    "status": "WAITING_START",
+    "start_local": "2026-10-31T12:00:00-05:00",
+    "end_local": "2026-11-28T12:00:00-05:00"
+  },
+  "halt_exists": false,
+  "pending_exists": false,
+  "frozen_hash_matches": 19,
+  "frozen_hash_total": 19,
+  "isolated_tests": {
+    "normal": 21,
+    "optimized": 21,
+    "result": "PASS"
+  },
+  "first_real_run_check": {
+    "local_time": "2026-10-31T12:50:00-05:00",
+    "scheduled": true
+  },
+  "backup": {
+    "file": "weather_local_pre_recovery.db",
+    "bytes": 1773711360,
+    "sha256": "386cbafcf8ccef65455b707b56a2bd0a130712ca2c2776c54da0cf6115ad3188"
+  },
+  "tcp_by_campaign": [
+    {
+      "campaign_id": "LUISITA_RECOVERY_PILOT_20261031",
+      "direction": "DL",
+      "status": "OK",
+      "n": 1,
+      "first": "2026-10-31T11:16:04-05:00",
+      "last": "2026-10-31T11:16:04-05:00"
+    },
+    {
+      "campaign_id": "LUISITA_RECOVERY_PILOT_20261031",
+      "direction": "UL",
+      "status": "OK",
+      "n": 1,
+      "first": "2026-10-31T11:16:19-05:00",
+      "last": "2026-10-31T11:16:19-05:00"
+    }
+  ],
+  "pilot_tcp": [
+    {
+      "campaign_id": "LUISITA_RECOVERY_PILOT_20261031",
+      "direction": "DL",
+      "status": "OK",
+      "measured_throughput_mbps": 88.41072062565459,
+      "operating_frequency_mhz": 6655.0,
+      "channel_bandwidth_mhz": 40.0,
+      "route_verified": 1,
+      "duration_seconds": 8,
+      "omit_seconds": 1,
+      "parallel_streams": 1,
+      "rf_time_delta_seconds": 4.0,
+      "cu01_weather_time_delta_seconds": 24.0,
+      "sj01_weather_time_delta_seconds": 136.0
+    },
+    {
+      "campaign_id": "LUISITA_RECOVERY_PILOT_20261031",
+      "direction": "UL",
+      "status": "OK",
+      "measured_throughput_mbps": 44.04011492979887,
+      "operating_frequency_mhz": 6655.0,
+      "channel_bandwidth_mhz": 40.0,
+      "route_verified": 1,
+      "duration_seconds": 8,
+      "omit_seconds": 1,
+      "parallel_streams": 1,
+      "rf_time_delta_seconds": 19.0,
+      "cu01_weather_time_delta_seconds": 39.0,
+      "sj01_weather_time_delta_seconds": 151.0
+    }
+  ],
+  "services": "Result=success\nId=luisita-prospective.timer\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n\nResult=success\nId=luisita-prospective.service\nActiveState=inactive\nSubState=dead\nUnitFileState=static\n\nResult=success\nId=andean-campaign.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n\nResult=success\nId=andean-throughput.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n\nResult=success\nId=atmoslink-throughput-6g.timer\nActiveState=inactive\nSubState=dead\nUnitFileState=disabled\n",
+  "new_release_journal": "Oct 31 11:25:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 31 11:25:00 Controlador python[4166085]: WAITING_START\nOct 31 11:25:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 31 11:25:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 31 11:26:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 31 11:26:00 Controlador python[4169127]: WAITING_START\nOct 31 11:26:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 31 11:26:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\nOct 31 11:27:00 Controlador systemd[1]: Starting luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller...\nOct 31 11:27:00 Controlador python[4171904]: WAITING_START\nOct 31 11:27:00 Controlador systemd[1]: luisita-prospective.service: Deactivated successfully.\nOct 31 11:27:00 Controlador systemd[1]: Finished luisita-prospective.service - Luisita prospective 28-day serial RF and TCP controller.\n"
+}

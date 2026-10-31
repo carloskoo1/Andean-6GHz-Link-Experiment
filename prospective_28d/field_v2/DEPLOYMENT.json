@@ -1,0 +1,29 @@
+{
+  "activated_at_utc": "2026-10-31T16:24:54.907064+00:00",
+  "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+  "start_local": "2026-10-31T12:00:00-05:00",
+  "end_local": "2026-11-28T12:00:00-05:00",
+  "reference_readback": {
+    "ap_f": 7000.0,
+    "ap_b": 20,
+    "sm_f": 7000.0,
+    "sm_b": 20
+  },
+  "previous_attempt_tests": 0,
+  "pilot_tcp": [
+    [
+      "DL",
+      "OK",
+      1
+    ],
+    [
+      "UL",
+      "OK",
+      1
+    ]
+  ],
+  "backup_manifest": "/home/carlos/Backups/Luisita_prospective_recovery/20261031_111743/SHA256.json",
+  "existing_systemd_entry_point": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v1/controller.py",
+  "new_release": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/field_v2",
+  "halt_reconciled_only_after_evidence": true
+}

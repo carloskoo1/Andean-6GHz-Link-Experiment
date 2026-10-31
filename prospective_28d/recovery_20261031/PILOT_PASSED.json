@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_1",
+        "frequency_mhz": 6655,
+        "bandwidth_mhz": 40
+      },
+      "readback": {
+        "ap_f": 6655.0,
+        "ap_b": 40,
+        "sm_f": 6655.0,
+        "sm_b": 40
+      },
+      "verified_utc": "2026-10-31T16:15:59.093238+00:00"
+    },
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_2",
+        "frequency_mhz": 7000,
+        "bandwidth_mhz": 40
+      },
+      "readback": {
+        "ap_f": 7000.0,
+        "ap_b": 40,
+        "sm_f": 7000.0,
+        "sm_b": 40
+      },
+      "verified_utc": "2026-10-31T16:17:42.923006+00:00"
+    },
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_3",
+        "frequency_mhz": 6655,
+        "bandwidth_mhz": 20
+      },
+      "readback": {
+        "ap_f": 6655.0,
+        "ap_b": 20,
+        "sm_f": 6655.0,
+        "sm_b": 20
+      },
+      "verified_utc": "2026-10-31T16:19:05.112088+00:00"
+    },
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_4",
+        "frequency_mhz": 6475,
+        "bandwidth_mhz": 40
+      },
+      "readback": {
+        "ap_f": 6475.0,
+        "ap_b": 40,
+        "sm_f": 6475.0,
+        "sm_b": 40
+      },
+      "verified_utc": "2026-10-31T16:20:13.033150+00:00"
+    },
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_5",
+        "frequency_mhz": 6475,
+        "bandwidth_mhz": 20
+      },
+      "readback": {
+        "ap_f": 6475.0,
+        "ap_b": 20,
+        "sm_f": 6475.0,
+        "sm_b": 20
+      },
+      "verified_utc": "2026-10-31T16:21:22.541624+00:00"
+    },
+    {
+      "target": {
+        "segment_id": "RECOVERY_PILOT_6",
+        "frequency_mhz": 7000,
+        "bandwidth_mhz": 20
+      },
+      "readback": {
+        "ap_f": 7000.0,
+        "ap_b": 20,
+        "sm_f": 7000.0,
+        "sm_b": 20
+      },
+      "verified_utc": "2026-10-31T16:24:02.319321+00:00"
+    }
+  ],
+  "not_factorial_data": true,
+  "returned_reference": true
+}
