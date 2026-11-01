@@ -1,0 +1,93 @@
+{
+  "observed_at_local": "2026-11-01T17:08:07.225010-05:00",
+  "status": {
+    "observed_at_utc": "2026-11-01T22:08:01.006248+00:00",
+    "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+    "status": "HALTED",
+    "error": "Prospective campaign is HALTED; see HALT.json and diagnostic events"
+  },
+  "halt": {
+    "reason": "Missed window start by >600 seconds",
+    "segment": "P01_S01"
+  },
+  "first_events": [
+    {
+      "timestamp_utc": "2026-10-31T16:24:54.750083+00:00",
+      "event": "RECOVERY_HANDOVER",
+      "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+      "failed_attempt_archived": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/recovery_20261031/failed_runtime_20261030",
+      "old_prospective_tests": 0,
+      "reference": {
+        "ap_f": 7000.0,
+        "ap_b": 20,
+        "sm_f": 7000.0,
+        "sm_b": 20
+      },
+      "start_local": "2026-10-31T12:00:00-05:00",
+      "end_local": "2026-11-28T12:00:00-05:00"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:00:00.735935+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:01:01.093975+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:02:01.086352+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:03:00.642133+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:04:01.089782+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:05:01.183986+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:06:01.087127+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:07:01.089823+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:08:01.091103+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:09:01.088447+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Autenticación rechazada por el AP: max_user_number_reached"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:10:00.734568+00:00",
+      "event": "MISSED_WINDOW_HALT",
+      "segment": "P01_S01"
+    },
+    {
+      "timestamp_utc": "2026-10-31T17:10:00.738924+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Prospective campaign is HALTED; see HALT.json and diagnostic events"
+    }
+  ],
+  "prospective_tcp_count": 0,
+  "scope": "Read-only audit; no radio/service/calendar changes",
+  "backup_result": "Result=exit-code\nExecMainExitTimestamp=Sun 2026-11-01 02:45:42 -05\nId=atmoslink-remote-backup.service\n\nResult=success\nExecMainExitTimestamp=Sun 2026-11-01 17:01:37 -05\nId=atmoslink-backup-recovery.service\n"
+}
