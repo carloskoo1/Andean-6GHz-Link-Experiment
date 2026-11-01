@@ -1,0 +1,9 @@
+{
+  "enabled_at_utc": "2026-10-31T16:24:54.515731+00:00",
+  "authorization": "Carlos: resolvamos, 31/10/2026",
+  "campaign_id": "LUISITA_PROSPECTIVE_28D_20261031",
+  "active_release": "field_v2",
+  "automatic_RF_before_D0": false,
+  "supersedes": "LUISITA_PROSPECTIVE_28D_20261030",
+  "failed_attempt_archived": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/recovery_20261031/failed_runtime_20261030"
+}

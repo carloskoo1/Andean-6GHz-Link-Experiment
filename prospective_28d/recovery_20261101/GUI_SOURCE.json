@@ -1,0 +1,13 @@
+{
+  "source": "JavaScript served by the AP firmware 5.4 GUI; inspected locally, full bundle excluded from repository",
+  "files": {
+    "cambium.ff5484e6dd.js": {
+      "sha256": "9cb4f244bdf5f704ab2aa9a52d54c0071920eb45d61b2bd5464918492cfd0043",
+      "bytes": 2106748
+    },
+    "cambium_libs.25d0028e5d.js": {
+      "sha256": "3059533a932c1d28a80d8bc62b4fde7d0d4bf11ad21304628ed0091ee7192983",
+      "bytes": 157056
+    }
+  }
+}

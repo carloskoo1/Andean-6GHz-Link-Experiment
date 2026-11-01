@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Compatibility entry point for the existing systemd unit; active release field_v2."""
+"""Versioned entrypoint of the installed unit; authorized commissioning is isolated."""
 import sys,runpy
 from pathlib import Path
-release=Path(__file__).resolve().parent.parent/'field_v2'
+root=Path(__file__).resolve().parents[2]
+release=root/'prospective_28d/field_v3'
 sys.path.insert(0,str(release))
-runpy.run_path(str(release/'controller.py'),run_name='__main__')
+program='commissioning.py' if (root/'prospective_runtime/COMMISSIONING_AUTH.json').exists() else 'controller.py'
+runpy.run_path(str(release/program),run_name='__main__')

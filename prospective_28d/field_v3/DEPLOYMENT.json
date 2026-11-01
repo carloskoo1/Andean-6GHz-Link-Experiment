@@ -1,0 +1,31 @@
+{
+  "activated_at_utc": "2026-11-01T22:38:44.118863+00:00",
+  "campaign_id": "LUISITA_PROSPECTIVE_28D_20261102",
+  "start_local": "2026-11-02T00:00:00-05:00",
+  "end_local": "2026-11-30T00:00:00-05:00",
+  "reference": {
+    "ap_f": 7000.0,
+    "ap_b": 20,
+    "sm_f": 7000.0,
+    "sm_b": 20,
+    "sm_dashboard_f": 7000.0,
+    "sm_dashboard_b": 20,
+    "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+    "ap_frequency_source": "dashboard_and_connected_STA_channel",
+    "ap_bssid": "bc:e6:7c:f0:a8:fc",
+    "sm_mac": "bc:e6:7c:f0:a8:24",
+    "sm_connection_state": 3
+  },
+  "old_attempts_tests": 0,
+  "systemd_pilot_TCP_OK": 4,
+  "normal_tests": 32,
+  "optimized_tests": 32,
+  "real_session_cycles": 12,
+  "backup": {
+    "path": "/home/carlos/Backups/Luisita_prospective_recovery_20261101/171941/weather_local_checkpoint.db",
+    "quick_check": "ok",
+    "sha256": "4d9e809afc8a0b21b1f0ead5639be8a848c1b0d61dd5226eb53dbf30f091ee4a",
+    "bytes": 1773711360
+  },
+  "previous_runtime_archive": "/home/carlos/Proyectos/Andean-6GHz-Link-Experiment/prospective_28d/recovery_20261101/reconciled_runtime"
+}

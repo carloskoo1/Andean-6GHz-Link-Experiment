@@ -1,0 +1,16 @@
+[
+  {
+    "wrong_reference": false,
+    "result": "PRESTART_VERIFIED",
+    "RF_writes": 0,
+    "TCP_tests": 0,
+    "precheck_calls": 1
+  },
+  {
+    "wrong_reference": true,
+    "result": "rejected",
+    "RF_writes": 0,
+    "TCP_tests": 0,
+    "precheck_calls": 1
+  }
+]

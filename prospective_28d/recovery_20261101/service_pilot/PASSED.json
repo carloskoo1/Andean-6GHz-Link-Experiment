@@ -1,0 +1,135 @@
+{
+  "at_utc": "2026-11-01T22:38:29.611917+00:00",
+  "results": [
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_1",
+        "frequency_mhz": 6655,
+        "bandwidth_mhz": 40
+      },
+      "at_utc": "2026-11-01T22:30:55.930441+00:00",
+      "readback": {
+        "ap_f": 6655.0,
+        "ap_b": 40,
+        "sm_f": 6655.0,
+        "sm_b": 40,
+        "sm_dashboard_f": 6655.0,
+        "sm_dashboard_b": 40,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    },
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_2",
+        "frequency_mhz": 7000,
+        "bandwidth_mhz": 40
+      },
+      "at_utc": "2026-11-01T22:32:19.516014+00:00",
+      "readback": {
+        "ap_f": 7000.0,
+        "ap_b": 40,
+        "sm_f": 7000.0,
+        "sm_b": 40,
+        "sm_dashboard_f": 7000.0,
+        "sm_dashboard_b": 40,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    },
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_3",
+        "frequency_mhz": 6655,
+        "bandwidth_mhz": 20
+      },
+      "at_utc": "2026-11-01T22:33:44.193733+00:00",
+      "readback": {
+        "ap_f": 6655.0,
+        "ap_b": 20,
+        "sm_f": 6655.0,
+        "sm_b": 20,
+        "sm_dashboard_f": 7000.0,
+        "sm_dashboard_b": 20,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    },
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_4",
+        "frequency_mhz": 6475,
+        "bandwidth_mhz": 40
+      },
+      "at_utc": "2026-11-01T22:35:07.299203+00:00",
+      "readback": {
+        "ap_f": 6475.0,
+        "ap_b": 40,
+        "sm_f": 6475.0,
+        "sm_b": 40,
+        "sm_dashboard_f": 6475.0,
+        "sm_dashboard_b": 40,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    },
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_5",
+        "frequency_mhz": 6475,
+        "bandwidth_mhz": 20
+      },
+      "at_utc": "2026-11-01T22:36:30.933405+00:00",
+      "readback": {
+        "ap_f": 6475.0,
+        "ap_b": 20,
+        "sm_f": 6475.0,
+        "sm_b": 20,
+        "sm_dashboard_f": 6475.0,
+        "sm_dashboard_b": 20,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    },
+    {
+      "target": {
+        "segment_id": "SERVICE_PILOT_6",
+        "frequency_mhz": 7000,
+        "bandwidth_mhz": 20
+      },
+      "at_utc": "2026-11-01T22:38:28.340143+00:00",
+      "readback": {
+        "ap_f": 7000.0,
+        "ap_b": 20,
+        "sm_f": 7000.0,
+        "sm_b": 20,
+        "sm_dashboard_f": 7000.0,
+        "sm_dashboard_b": 20,
+        "sm_frequency_source": "associated_AP_table_matched_to_BSSID",
+        "ap_frequency_source": "dashboard_and_connected_STA_channel",
+        "ap_bssid": "bc:e6:7c:f0:a8:fc",
+        "sm_mac": "bc:e6:7c:f0:a8:24",
+        "sm_connection_state": 3
+      }
+    }
+  ],
+  "returned_reference": true,
+  "systemd_context": true,
+  "tcp_pairs": 2,
+  "excluded_from_factorial": true
+}

@@ -1,0 +1,33 @@
+{
+  "authorization": "Carlos: resolvamos ya mediante DC, 01/11/2026",
+  "created_at_utc": "2026-11-01T22:18:09.319092+00:00",
+  "campaign_id": "LUISITA_SERVICE_PILOT_20261101_LIVE",
+  "excluded_from_experiment": true,
+  "targets": [
+    [
+      6655,
+      40
+    ],
+    [
+      7000,
+      40
+    ],
+    [
+      6655,
+      20
+    ],
+    [
+      6475,
+      40
+    ],
+    [
+      6475,
+      20
+    ],
+    [
+      7000,
+      20
+    ]
+  ],
+  "excluded_from_factorial": true
+}
