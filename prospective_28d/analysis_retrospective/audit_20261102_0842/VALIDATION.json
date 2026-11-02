@@ -1,0 +1,8 @@
+{
+  "normal_tests": 5,
+  "optimized_tests": 5,
+  "snapshot_replay_byte_identical": true,
+  "recovered_SJ01_observation_not_later_than_TCP": 25,
+  "original_data_modified": false,
+  "field_code_modified": false
+}
