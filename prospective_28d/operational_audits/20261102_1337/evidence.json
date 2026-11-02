@@ -1,0 +1,90 @@
+{
+  "observed_at_utc": "2026-11-02T18:38:09.910962+00:00",
+  "status": {
+    "observed_at_utc": "2026-11-02T18:38:00.722468+00:00",
+    "campaign_id": "LUISITA_PROSPECTIVE_28D_20261102",
+    "status": "MONITORING",
+    "start_local": "2026-11-02T00:00:00-05:00",
+    "end_local": "2026-11-30T00:00:00-05:00"
+  },
+  "state": {
+    "segment_id": "P01_S02",
+    "cycle": 1,
+    "slot": 2,
+    "phase": "PROSPECTIVE",
+    "frequency_mhz": 7000,
+    "bandwidth_mhz": 20,
+    "start_local": "2026-11-02T12:00:00-05:00",
+    "end_local": "2026-11-03T00:00:00-05:00",
+    "verified_at": "2026-11-02T17:01:21.437611+00:00",
+    "analysis_start": "2026-11-02T17:31:21.437611+00:00",
+    "changed": true,
+    "last_measurement_slot": "2026-11-02T18:30"
+  },
+  "tcp": [
+    {
+      "direction": "DL",
+      "status": "OK",
+      "n": 48,
+      "first": "2026-11-02T00:45:08-05:00",
+      "last": "2026-11-02T13:30:08-05:00"
+    },
+    {
+      "direction": "UL",
+      "status": "OK",
+      "n": 48,
+      "first": "2026-11-02T00:45:23-05:00",
+      "last": "2026-11-02T13:30:23-05:00"
+    }
+  ],
+  "events": [
+    {
+      "timestamp_utc": "2026-11-02T04:58:02.024108+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "Radio identity mismatch: ap"
+    },
+    {
+      "timestamp_utc": "2026-11-02T05:01:24.861734+00:00",
+      "event": "WINDOW_VERIFIED",
+      "state": {
+        "segment_id": "P01_S01",
+        "cycle": 1,
+        "slot": 1,
+        "phase": "PROSPECTIVE",
+        "frequency_mhz": 6655,
+        "bandwidth_mhz": 40,
+        "start_local": "2026-11-02T00:00:00-05:00",
+        "end_local": "2026-11-02T12:00:00-05:00",
+        "verified_at": "2026-11-02T05:01:24.643501+00:00",
+        "analysis_start": "2026-11-02T05:31:24.643501+00:00",
+        "changed": true,
+        "last_measurement_slot": null
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-02T15:00:02.605959+00:00",
+      "event": "CONTROLLER_ERROR",
+      "error": "La consulta respondi\u00f3, pero faltan variables obligatorias."
+    },
+    {
+      "timestamp_utc": "2026-11-02T17:01:21.441138+00:00",
+      "event": "WINDOW_VERIFIED",
+      "state": {
+        "segment_id": "P01_S02",
+        "cycle": 1,
+        "slot": 2,
+        "phase": "PROSPECTIVE",
+        "frequency_mhz": 7000,
+        "bandwidth_mhz": 20,
+        "start_local": "2026-11-02T12:00:00-05:00",
+        "end_local": "2026-11-03T00:00:00-05:00",
+        "verified_at": "2026-11-02T17:01:21.437611+00:00",
+        "analysis_start": "2026-11-02T17:31:21.437611+00:00",
+        "changed": true,
+        "last_measurement_slot": null
+      }
+    }
+  ],
+  "backup_recovery_journal": "Nov 02 13:08:48 Controlador systemd[1]: Finished atmoslink-backup-recovery.service - AtmosLink backup recovery to both Google Drive destinations.\nNov 02 13:08:48 Controlador systemd[1]: atmoslink-backup-recovery.service: Consumed 6.194s CPU time.\nNov 02 13:33:09 Controlador systemd[1]: Starting atmoslink-backup-recovery.service - AtmosLink backup recovery to both Google Drive destinations...\nNov 02 13:35:56 Controlador python[254943]: 2026-11-02T18:34:53+00:00 | primary: verified backup_CU01_20261102_125024.zip (255313169 bytes)\nNov 02 13:35:56 Controlador python[254943]: 2026-11-02T18:35:56+00:00 | unc: verified backup_CU01_20261102_125024.zip (255313169 bytes)\nNov 02 13:35:56 Controlador python[254943]: 2026-11-02T18:35:56+00:00 | RECOVERY COMPLETE 2/2: backup_CU01_20261102_125024.zip\nNov 02 13:35:57 Controlador systemd[1]: atmoslink-backup-recovery.service: Deactivated successfully.\nNov 02 13:35:57 Controlador systemd[1]: Finished atmoslink-backup-recovery.service - AtmosLink backup recovery to both Google Drive destinations.\n",
+  "frozen_changes": []
+}
