@@ -68,3 +68,7 @@ Preservar crudos inmutables y registrar versión de ejecutor, timestamp local/UT
 
 **Confidencialidad:** no incorporar a GitHub ni a una versión pública de Zenodo tesis integral, informes privados, fichas de expertos, firmas, datos crudos, credenciales o documentos que no cuenten con autorización académica. La presente nota de método no es una validación de resultados definitivos.
 **Estado Zenodo al 20/11/2026:** no se identificó un depósito/DOI verificable de Luisita con permisos de edición; **no** se creó ni actualizó registro Zenodo. Se preparó un paquete de borrador privado para revisión académica y depósito manual ulterior.
+
+## Sustento bibliográfico adicional (20/11/2026)
+
+La justificación precisa de cada decisión metodológica, siete referencias verificadas y las advertencias sobre el umbral local de elegibilidad se encuentran en [SUSTENTO_BIBLIOGRAFICO_ANEXO_XV_20261120.md](SUSTENTO_BIBLIOGRAFICO_ANEXO_XV_20261120.md). No modifica la elegibilidad confirmatoria ni el calendario en ejecución.
