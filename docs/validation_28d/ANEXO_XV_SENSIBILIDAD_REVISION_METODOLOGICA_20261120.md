@@ -4,7 +4,7 @@
 **Estado:** revisión documental elaborada DURANTE la fase prospectiva. No es un prerregistro anterior al inicio, no sustituye las reglas vigentes, no acredita aprobación de la adenda ni autoriza cambios RF.  
 **Fuente académica privada:** `TESIS_LUISITA_MATRICES_PRESENTACION_FINAL_20261103.docx`. El Word académico completo, fichas y firmas permanecen bajo custodia privada.  
 **SHA-256 Word fuente:** `5f4d5d62fcc1cafbb7f1e8328c94064d4bfa98cca7bbdadf25b103c7e4d9f265`.  
-**SHA-256 tesis de trabajo integrada con Anexo XV:** sujeto al manifiesto del expediente local; no se publica el DOCX completo durante adquisición.
+**SHA-256 tesis de trabajo integrada con Anexo XV:** `c6178a486cdc56bef33dbc4e38c729c907403290a680840177f036c423a40c23`; no se publica el DOCX completo durante adquisición.
 
 ## O5, diseño y estimando
 
@@ -67,3 +67,4 @@ Preservar crudos inmutables y registrar versión de ejecutor, timestamp local/UT
 - R. Jacob et al., “Designing Replicable Networking Experiments With TriScale”, *Journal of Systems Research*, 2021.
 
 **Confidencialidad:** no incorporar a GitHub ni a una versión pública de Zenodo tesis integral, informes privados, fichas de expertos, firmas, datos crudos, credenciales o documentos que no cuenten con autorización académica. La presente nota de método no es una validación de resultados definitivos.
+**Estado Zenodo al 20/11/2026:** no se identificó un depósito/DOI verificable de Luisita con permisos de edición; **no** se creó ni actualizó registro Zenodo. Se preparó un paquete de borrador privado para revisión académica y depósito manual ulterior.
